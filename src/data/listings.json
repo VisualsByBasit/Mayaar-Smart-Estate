@@ -5,8 +5,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6906824,
-    "longitude": 72.8280184,
+    "latitude": 33.691705,
+    "longitude": 72.8290659,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 43000000,
@@ -19,7 +19,8 @@
     "source_url": "https://www.zameen.com/Property/mpchs_multi_gardens_mpchs_-_block_e_b-17_e_block_mdr_back_brand_new_house_modern_designer-54564692-3120-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305556834-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 2,
@@ -27,8 +28,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5309437,
-    "longitude": 73.1657941,
+    "latitude": 33.530985,
+    "longitude": 73.1670768,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 150000000,
@@ -41,7 +42,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_fully_furnished_1_kanal_spanish_style_house_for_sale_in_dha_phase_2-54480942-339-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305857276-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 3,
@@ -49,8 +51,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6913185,
-    "longitude": 72.828663,
+    "latitude": 33.6906957,
+    "longitude": 72.8296332,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 43000000,
@@ -63,7 +65,8 @@
     "source_url": "https://www.zameen.com/Property/mpchs_multi_gardens_mpchs_-_block_e_b17_block_e_brand_new_house_available_for_sale_a_construction-54457593-3120-1.html",
     "image_url": "https://media.zameen.com/thumbnails/304512065-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 4,
@@ -71,8 +74,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5757147,
-    "longitude": 72.8673662,
+    "latitude": 33.5775348,
+    "longitude": 72.8673439,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 75000000,
@@ -85,7 +88,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_a_centrally_located_house_is_available_for_sale_in_top_city_1-54472449-1383-1.html",
     "image_url": "https://media.zameen.com/thumbnails/304665326-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 5,
@@ -93,8 +97,8 @@
     "city": "Islamabad",
     "sector": "D-12",
     "society": "D-12",
-    "latitude": 33.7009507,
-    "longitude": 72.949423,
+    "latitude": 33.7028323,
+    "longitude": 72.9496221,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 145000000,
@@ -107,7 +111,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_d-12_14_marla_spacious_house_is_available_in_d-12_for_sale-54065484-160-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 6,
@@ -115,8 +120,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6504287,
-    "longitude": 72.9655187,
+    "latitude": 33.6522132,
+    "longitude": 72.9667466,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 127500000,
@@ -129,7 +134,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_40x80_brand_new_sun_face_modern_luxurious_house_available_for_sale_in_g-13_islamabad_on_ideal_location-54615731-330-1.html",
     "image_url": "https://media.zameen.com/thumbnails/306038841-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 7,
@@ -137,8 +143,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6909845,
-    "longitude": 72.8300465,
+    "latitude": 33.6912857,
+    "longitude": 72.8280413,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 40000000,
@@ -152,7 +158,8 @@
     "source_url": "https://www.zameen.com/Property/b_17_mpchs_-_multi_gardens_brand_new_hybrid_unit_house_2nd_corner_mdr_8_marla_30x60_house-54615430-3115-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 8,
@@ -160,8 +167,8 @@
     "city": "Islamabad",
     "sector": "G-14",
     "society": "G-14",
-    "latitude": 33.6394996,
-    "longitude": 72.9477176,
+    "latitude": 33.6411223,
+    "longitude": 72.9485479,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 72500000,
@@ -175,7 +182,8 @@
     "source_url": "https://www.zameen.com/Property/g_14_g-14_3_brand_new_14_marla_double_storey_house_for_sale-54518609-3345-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 9,
@@ -183,8 +191,8 @@
     "city": "Islamabad",
     "sector": "Jinnah Gardens",
     "society": "Jinnah Gardens",
-    "latitude": 33.5738014,
-    "longitude": 73.1746558,
+    "latitude": 33.5739132,
+    "longitude": 73.1733127,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 37000000,
@@ -197,7 +205,8 @@
     "source_url": "https://www.zameen.com/Property/jinnah_gardens_jinnah_gardens_phase_1_7_marla_double_unit_house_for_sale-54511735-1421-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 10,
@@ -205,8 +214,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 5",
     "society": "DHA Defence",
-    "latitude": 33.5291253,
-    "longitude": 73.2084296,
+    "latitude": 33.5293881,
+    "longitude": 73.2087396,
     "marla": 30,
     "sqft": 6750,
     "price_pkr": 125000000,
@@ -219,7 +228,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_5_30_marla_corner_owner_build_house_dha_phase_5_islamabad-54484662-10991-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 11,
@@ -227,8 +237,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5784695,
-    "longitude": 72.8659836,
+    "latitude": 33.5765255,
+    "longitude": 72.8679104,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 55000000,
@@ -241,7 +251,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_brand_new_house_for_sale_top_city_1_islamabad_san_fasing-54601832-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 12,
@@ -249,8 +260,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5781161,
-    "longitude": 72.8667127,
+    "latitude": 33.5771155,
+    "longitude": 72.8663207,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 53000000,
@@ -263,7 +274,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_brand_new_house_for_sale_top_city_1-54592992-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 13,
@@ -271,8 +283,8 @@
     "city": "Islamabad",
     "sector": "F-17",
     "society": "F-17",
-    "latitude": 33.6316286,
-    "longitude": 72.879688,
+    "latitude": 33.6331899,
+    "longitude": 72.8808346,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 22000000,
@@ -285,7 +297,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-17_8_marla_single_story_available_for_sale-54615612-335-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 14,
@@ -293,8 +306,8 @@
     "city": "Islamabad",
     "sector": "D-17",
     "society": "D-17",
-    "latitude": 33.6584762,
-    "longitude": 72.859799,
+    "latitude": 33.6595449,
+    "longitude": 72.8588506,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 43000000,
@@ -307,7 +320,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_d-17_10_marla_brand_new_house_avalible_for_sale_in_heart_of_d17_2_islamabad-54615723-737-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 15,
@@ -315,8 +329,8 @@
     "city": "Islamabad",
     "sector": "F-17",
     "society": "F-17",
-    "latitude": 33.631738,
-    "longitude": 72.8810794,
+    "latitude": 33.6321806,
+    "longitude": 72.8814015,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 27800000,
@@ -329,7 +343,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-17_8_marla_beautiful_house_available_for_sale-54615571-335-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 16,
@@ -337,8 +352,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6916276,
-    "longitude": 72.8286831,
+    "latitude": 33.6918121,
+    "longitude": 72.8300084,
     "marla": 17,
     "sqft": 3825,
     "price_pkr": 85000000,
@@ -351,7 +366,8 @@
     "source_url": "https://www.zameen.com/Property/mpchs_multi_gardens_mpchs_-_block_b_designer_luxury_house_for_sale_17_marla_block_b_b-17_multi_gardens_islamabad-54398936-3117-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 17,
@@ -359,8 +375,8 @@
     "city": "Islamabad",
     "sector": "Gulberg Residencia",
     "society": "Gulberg",
-    "latitude": 33.5998927,
-    "longitude": 73.2125328,
+    "latitude": 33.6002436,
+    "longitude": 73.2138444,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 45000000,
@@ -374,7 +390,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_gulberg_brand_new_7_marla_ground_full_furnished_double_storey_house_far_sale_in_gulbrg_green_residensia_islamabad-54582322-1682-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 18,
@@ -382,8 +399,8 @@
     "city": "Islamabad",
     "sector": "Mumtaz City",
     "society": "Mumtaz City",
-    "latitude": 33.5878372,
-    "longitude": 72.8595276,
+    "latitude": 33.5896525,
+    "longitude": 72.8604097,
     "marla": 5.6,
     "sqft": 1260,
     "price_pkr": 23500000,
@@ -396,7 +413,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_mumtaz_city_in_mumtaz_city_house_sized_1250_square_feet_for_sale-54497988-3464-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 19,
@@ -404,8 +422,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5775819,
-    "longitude": 72.8671267,
+    "latitude": 33.5776419,
+    "longitude": 72.8682851,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 57500000,
@@ -419,7 +437,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_brand_new_corner_house_for_sale_top_city_1-54598216-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 20,
@@ -427,8 +446,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5299333,
-    "longitude": 73.1673335,
+    "latitude": 33.5299757,
+    "longitude": 73.167643,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 129000000,
@@ -441,7 +460,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_dha_2_one_kanal_brand_new_luxurious_designer_house-52696249-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 21,
@@ -449,8 +469,8 @@
     "city": "Islamabad",
     "sector": "G-10",
     "society": "G-10",
-    "latitude": 33.6767479,
-    "longitude": 73.0142901,
+    "latitude": 33.6773824,
+    "longitude": 73.0148908,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 87500000,
@@ -463,7 +483,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-10_g10_islamabad_brand_new_house_available_for_sale-54615786-167-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 22,
@@ -471,8 +492,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.531374,
-    "longitude": 73.1676738,
+    "latitude": 33.5305657,
+    "longitude": 73.1660541,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 125000000,
@@ -485,7 +506,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_dha_2_one_kanal_luxurious_furnished_house-54059928-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 23,
@@ -493,8 +515,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5297232,
-    "longitude": 73.1673001,
+    "latitude": 33.5310921,
+    "longitude": 73.1680175,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 119000000,
@@ -507,7 +529,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_dha2_one_kanal_designer_house_for_sale-54037324-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 24,
@@ -515,8 +538,8 @@
     "city": "Islamabad",
     "sector": "Mumtaz City",
     "society": "Mumtaz City",
-    "latitude": 33.589234,
-    "longitude": 72.8615351,
+    "latitude": 33.5886432,
+    "longitude": 72.8609763,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 25500000,
@@ -529,7 +552,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_mumtaz_city_5_marla_house_on_installment_in_mumtaz_city-_your_dream_come_true_house-54611975-3464-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 25,
@@ -537,8 +561,8 @@
     "city": "Islamabad",
     "sector": "Mumtaz City",
     "society": "Mumtaz City",
-    "latitude": 33.5898467,
-    "longitude": 72.8597735,
+    "latitude": 33.5892332,
+    "longitude": 72.8593863,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 36500000,
@@ -551,7 +575,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_mumtaz_city_7_marla_house_on_installment_in_mumtaz_city_islamabad-54612014-3464-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 26,
@@ -559,8 +584,8 @@
     "city": "Islamabad",
     "sector": "D-12",
     "society": "D-12",
-    "latitude": 33.7037787,
-    "longitude": 72.9484763,
+    "latitude": 33.701823,
+    "longitude": 72.9501894,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 64000000,
@@ -573,7 +598,8 @@
     "source_url": "https://www.zameen.com/Property/d_12_d-12_4_beautifully_constructed_house_is_available_for_sale_in_d-12_4-54076104-3157-1.html",
     "image_url": "https://media.zameen.com/thumbnails/304815092-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 27,
@@ -581,8 +607,8 @@
     "city": "Islamabad",
     "sector": "D-12",
     "society": "D-12",
-    "latitude": 33.7020926,
-    "longitude": 72.9503935,
+    "latitude": 33.702413,
+    "longitude": 72.9485974,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 120000000,
@@ -595,7 +621,8 @@
     "source_url": "https://www.zameen.com/Property/d_12_d-12_1_10_marla_ideal_luxury_single_unit_house_for_sale-54390493-3154-1.html",
     "image_url": "https://media.zameen.com/thumbnails/303847685-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 28,
@@ -603,8 +630,8 @@
     "city": "Islamabad",
     "sector": "D-12",
     "society": "D-12",
-    "latitude": 33.7012942,
-    "longitude": 72.949589,
+    "latitude": 33.7029394,
+    "longitude": 72.9505647,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 57000000,
@@ -617,7 +644,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_d-12_ideal_house_for_sale_in_d-12-54313029-160-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 29,
@@ -625,8 +653,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.720656,
-    "longitude": 73.0575418,
+    "latitude": 33.7225325,
+    "longitude": 73.0570372,
     "marla": 72,
     "sqft": 16200,
     "price_pkr": 840000000,
@@ -639,7 +667,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_investor_alert_ultra-premium_f-7_property_islamabad_1_777_sq_yards_margalla_facing_3-side_open_massive_lawn-54119721-165-1.html",
     "image_url": "https://media.zameen.com/thumbnails/301107454-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 30,
@@ -647,8 +676,8 @@
     "city": "Islamabad",
     "sector": "F-6",
     "society": "F-6",
-    "latitude": 33.7304829,
-    "longitude": 73.0748184,
+    "latitude": 33.7301833,
+    "longitude": 73.0745993,
     "marla": 46,
     "sqft": 10350,
     "price_pkr": 550000000,
@@ -661,7 +690,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-6_investor_alert_prime_f-6_property_for_sale_sector_f-6_islamabad_margalla_view_facing_1146_sq_yards_corner_plot_prime_investment_opportunity-54418179-164-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 31,
@@ -669,8 +699,8 @@
     "city": "Islamabad",
     "sector": "F-11",
     "society": "F-11",
-    "latitude": 33.6835708,
-    "longitude": 72.9903573,
+    "latitude": 33.6829385,
+    "longitude": 72.9909161,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 185000000,
@@ -683,7 +713,8 @@
     "source_url": "https://www.zameen.com/Property/f_11_f-11_4_f-11_4_dead_end_street_storey_house_for_sale-52016355-3285-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 32,
@@ -691,8 +722,8 @@
     "city": "Islamabad",
     "sector": "Mumtaz City",
     "society": "Mumtaz City",
-    "latitude": 33.5897443,
-    "longitude": 72.8606928,
+    "latitude": 33.5897596,
+    "longitude": 72.8613511,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 34000000,
@@ -705,7 +736,8 @@
     "source_url": "https://www.zameen.com/Property/mumtaz_city_mumtaz_city_-_chanab_block_brand_new_elegant_home_for_sale-54609950-14993-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 33,
@@ -713,8 +745,8 @@
     "city": "Islamabad",
     "sector": "Faisal Town",
     "society": "Faisal Town",
-    "latitude": 33.6101235,
-    "longitude": 72.8670077,
+    "latitude": 33.6103779,
+    "longitude": 72.8671391,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 32500000,
@@ -727,7 +759,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_faisal_town_-_f-18_08_marla_brand_new_house_available_for_sale_in_faisal_town_f-18_islamabad-53721716-8260-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 34,
@@ -735,8 +768,8 @@
     "city": "Islamabad",
     "sector": "F-11",
     "society": "F-11",
-    "latitude": 33.6834643,
-    "longitude": 72.9922501,
+    "latitude": 33.6819292,
+    "longitude": 72.9914833,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 300000000,
@@ -750,7 +783,8 @@
     "source_url": "https://www.zameen.com/Property/f_11_f-11_2_f-11_2_brand_new_666_yards_fully-furnished_house_high-end_construction_9_bedrooms_full_basement_unparalleled_luxury_and_sophistication_price_30_crores-52722809-3283-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 35,
@@ -758,8 +792,8 @@
     "city": "Islamabad",
     "sector": "F-11",
     "society": "F-11",
-    "latitude": 33.6823667,
-    "longitude": 72.9914086,
+    "latitude": 33.6825192,
+    "longitude": 72.9898916,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 400000000,
@@ -772,7 +806,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-11_f11_3_500_yards_extraordinary_margalla-facing_house_tripleunit_layout_9_bedrooms_ideal_for_large_families_with_lush_extra_land_-_a_residence_for_the_distinguished_-_40_crores-54322025-163-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 36,
@@ -780,8 +815,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5757227,
-    "longitude": 72.8679484,
+    "latitude": 33.5759528,
+    "longitude": 72.8671129,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 52500000,
@@ -794,7 +829,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_10_marla_brand_new_house_for_sale_topcity1_islamabad_visit_anytime-54615798-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 37,
@@ -802,8 +838,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5309323,
-    "longitude": 73.1685561,
+    "latitude": 33.529403,
+    "longitude": 73.166846,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 119000000,
@@ -816,7 +852,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_dha_phase_2_one_kanal_brand_new_luxurious_designer_house-52691375-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 38,
@@ -824,8 +861,8 @@
     "city": "Islamabad",
     "sector": "Gulberg Residencia",
     "society": "Gulberg",
-    "latitude": 33.6007153,
-    "longitude": 73.2131982,
+    "latitude": 33.5992343,
+    "longitude": 73.2144111,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 65000000,
@@ -838,7 +875,8 @@
     "source_url": "https://www.zameen.com/Property/gulberg_gulberg_residencia_10_marla_house_for_sale_gulbarg_green_7_bedroom_7_washroom_sun_face_to_drawing_room_to_kitchen_10_kv_solar_system_in_start_1_wapda_meter_tal_floor_car_parking_top_top_roof_chhat_chips-54583906-8319-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 39,
@@ -846,8 +884,8 @@
     "city": "Islamabad",
     "sector": "G-10",
     "society": "G-10",
-    "latitude": 33.6765457,
-    "longitude": 73.0153968,
+    "latitude": 33.6763731,
+    "longitude": 73.015458,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 86000000,
@@ -860,7 +898,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-10_g10_1_30_60_brand_new_house_available_for_sale_ideal_location-54561067-167-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 40,
@@ -868,8 +907,8 @@
     "city": "Islamabad",
     "sector": "G-10",
     "society": "G-10",
-    "latitude": 33.675456,
-    "longitude": 73.0147759,
+    "latitude": 33.6769631,
+    "longitude": 73.0138664,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 65000000,
@@ -882,7 +921,8 @@
     "source_url": "https://www.zameen.com/Property/g_10_g-10_4_g10_4_30_50_2_unit_house_available_for_sale_with_solor_system_installed-54088282-3327-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 41,
@@ -890,8 +930,8 @@
     "city": "Islamabad",
     "sector": "E-11",
     "society": "E-11",
-    "latitude": 33.6982202,
-    "longitude": 72.9732535,
+    "latitude": 33.6997102,
+    "longitude": 72.9744022,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 93000000,
@@ -904,7 +944,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_e-11_10_marla_house_in_stunning_e-11_is_available_for_sale-54614337-329-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 42,
@@ -912,8 +953,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6898878,
-    "longitude": 72.8298706,
+    "latitude": 33.690123,
+    "longitude": 72.8288346,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 32000000,
@@ -926,7 +967,8 @@
     "source_url": "https://www.zameen.com/Property/mpchs_multi_gardens_mpchs_-_block_c1_7_marla_luxury_house_for_sale_in_b-17_c1_full_house_tour-53504159-12607-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 43,
@@ -934,8 +976,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5759287,
-    "longitude": 72.8665867,
+    "latitude": 33.5780618,
+    "longitude": 72.8665642,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 52500000,
@@ -948,7 +990,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_10_marla_house_on_installment_in_top_city-1_first_time_in_islamabad-54612100-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 44,
@@ -956,8 +999,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6952922,
-    "longitude": 73.2216406,
+    "latitude": 33.6961135,
+    "longitude": 73.2205263,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 60000000,
@@ -970,7 +1013,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_a_bahria_enclave_islamabad-54615760-11970-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 45,
@@ -978,8 +1022,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5292326,
-    "longitude": 73.1669244,
+    "latitude": 33.531512,
+    "longitude": 73.1662976,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 72500000,
@@ -992,7 +1036,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_10_marla_brand_new_solid_constructed_house_for_sale_with_front_open-52686163-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 46,
@@ -1000,8 +1045,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5306392,
-    "longitude": 73.168227,
+    "latitude": 33.5301515,
+    "longitude": 73.1685912,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 145000000,
@@ -1014,7 +1059,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_single_unit_designer_house_for_sale-52620524-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 47,
@@ -1022,8 +1068,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5314487,
-    "longitude": 73.1681688,
+    "latitude": 33.5298468,
+    "longitude": 73.1655891,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 110000000,
@@ -1037,7 +1083,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_brand_new_double_unit_house_at_prime_and_heighted_location_south_face-52406293-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 48,
@@ -1045,8 +1092,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5298262,
-    "longitude": 73.1668227,
+    "latitude": 33.5318832,
+    "longitude": 73.1676868,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 109000000,
@@ -1059,7 +1106,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_owner_built_slightly_used_double_unit_house_for_sale-52404124-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 49,
@@ -1067,8 +1115,8 @@
     "city": "Islamabad",
     "sector": "B-17",
     "society": "MPCHS Multi Gardens",
-    "latitude": 33.6907872,
-    "longitude": 72.8302185,
+    "latitude": 33.692232,
+    "longitude": 72.8282852,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 23500000,
@@ -1081,7 +1129,8 @@
     "source_url": "https://www.zameen.com/Property/b_17_mpchs_-_multi_gardens_house_sized_5_marla_is_available_for_sale_in_mpchs_-_multi_gardens-54598808-3115-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 50,
@@ -1089,8 +1138,8 @@
     "city": "Islamabad",
     "sector": "Top City 1",
     "society": "Top City",
-    "latitude": 33.5784139,
-    "longitude": 72.8662967,
+    "latitude": 33.5767013,
+    "longitude": 72.8688591,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 85000000,
@@ -1103,7 +1152,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_top_city_1_1_kanal_house_double_unit_for_sale_topcity1_islamabad-54615726-1383-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 51,
@@ -1111,8 +1161,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C1",
     "society": "Bahria Enclave",
-    "latitude": 33.6795521,
-    "longitude": 73.2186794,
+    "latitude": 33.6810175,
+    "longitude": 73.2194835,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 56000000,
@@ -1125,7 +1175,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c1_brand_new_designer_house_for_sale_in_sector_c1_a_construction_best_location_for_living_bahria_enclave_islamabad-54299896-11987-1.html",
     "image_url": "https://media.zameen.com/thumbnails/304166493-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 52,
@@ -1133,8 +1184,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector H",
     "society": "Bahria Enclave",
-    "latitude": 33.6806985,
-    "longitude": 73.2459048,
+    "latitude": 33.6819926,
+    "longitude": 73.2459499,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 32500000,
@@ -1147,7 +1198,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_h_sector_h_5_marla_brand_new_designer_house_excellent_construction_quality_sun_facing_house_available_for_sale-54606816-11983-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305950634-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 53,
@@ -1155,8 +1207,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C1",
     "society": "Bahria Enclave",
-    "latitude": 33.6807908,
-    "longitude": 73.2187717,
+    "latitude": 33.6800082,
+    "longitude": 73.2200507,
     "marla": 11,
     "sqft": 2475,
     "price_pkr": 61000000,
@@ -1170,7 +1222,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c1_11_marla_corner_luxury_house_for_sale_double_unit_sector_c1_bahria_enclave-54344674-11987-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305615702-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 54,
@@ -1178,8 +1231,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector N",
     "society": "Bahria Enclave",
-    "latitude": 33.6915123,
-    "longitude": 73.2347568,
+    "latitude": 33.6934941,
+    "longitude": 73.235,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 42500000,
@@ -1193,7 +1246,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_n_8_marla_brand_new_park-facing_house_with_0_5_marla_extra_land_located_in_the_prime_location_of_bahria_enclave_sector_n_islamabad_cda_lop_approved-54496059-11975-1.html",
     "image_url": "https://media.zameen.com/thumbnails/304948777-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 55,
@@ -1201,8 +1255,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C",
     "society": "Bahria Enclave",
-    "latitude": 33.6863205,
-    "longitude": 73.2162815,
+    "latitude": 33.6872068,
+    "longitude": 73.2160825,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 120000000,
@@ -1215,7 +1269,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c_brand_new_designer_house_for_sale_in_sector_c_spanish_style15_kva_solar_main_boulevard_neat_to_entrance_bahria_enclave_islamabad-54592889-11973-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 56,
@@ -1223,8 +1278,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector H",
     "society": "Bahria Enclave",
-    "latitude": 33.6828578,
-    "longitude": 73.2465214,
+    "latitude": 33.6809833,
+    "longitude": 73.2465171,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 28500000,
@@ -1237,7 +1292,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_h_brand_new_designer_house_for_sale_5_marla_south_facing_house_sector_h_bahria_enclave_islamabad_demand_pkr_27_5_million-54487805-11983-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 57,
@@ -1245,8 +1301,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6956659,
-    "longitude": 73.2208791,
+    "latitude": 33.6951042,
+    "longitude": 73.2210936,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 43000000,
@@ -1259,7 +1315,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_10_marla_house_for_sale_in_behria_enclave_islamabad-54544098-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 58,
@@ -1267,8 +1324,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.696148,
-    "longitude": 73.2191883,
+    "latitude": 33.6956942,
+    "longitude": 73.2195017,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 48000000,
@@ -1281,7 +1338,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_corner_house_for_sale_bahria_enclave_islamabad-54607953-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 59,
@@ -1289,8 +1347,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector F1",
     "society": "Bahria Enclave",
-    "latitude": 33.6911986,
-    "longitude": 73.2288399,
+    "latitude": 33.6904941,
+    "longitude": 73.228,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 43000000,
@@ -1303,7 +1361,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_f1_8_marla_house_for_sale_in_bahria_enclave_islamabad-54567481-11986-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 60,
@@ -1311,8 +1370,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C",
     "society": "Bahria Enclave",
-    "latitude": 33.6878362,
-    "longitude": 73.2169761,
+    "latitude": 33.6861975,
+    "longitude": 73.2166497,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 120000000,
@@ -1325,7 +1384,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c_1_kanal_house_for_sale_sector_c_road_5-b-54591800-11973-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 61,
@@ -1333,8 +1393,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6952965,
-    "longitude": 73.2202232,
+    "latitude": 33.6962206,
+    "longitude": 73.2214688,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 132000000,
@@ -1347,7 +1407,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_1_kanal_house_fully_furnished_behria_enclave-54611906-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 62,
@@ -1355,8 +1416,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C1",
     "society": "Bahria Enclave",
-    "latitude": 33.679334,
-    "longitude": 73.2198864,
+    "latitude": 33.6805982,
+    "longitude": 73.2184591,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 52000000,
@@ -1369,7 +1430,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c1_owner_built_10_marla_beautiful_brand_new_designer_house_available_for_sale_just_1_mnt_drive_from_the_main_gate-52795090-11987-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 63,
@@ -1377,8 +1439,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector N",
     "society": "Bahria Enclave",
-    "latitude": 33.6916867,
-    "longitude": 73.233702,
+    "latitude": 33.6924848,
+    "longitude": 73.2355673,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 31500000,
@@ -1392,7 +1454,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_n_brand_new_7_marla_corner_house_for_sale_in_sector_n_4_bedroom_best_location_for_living_bahria_enclave_islamabad-54435762-11975-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 64,
@@ -1400,8 +1463,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector P",
     "society": "Bahria Enclave",
-    "latitude": 33.6971263,
-    "longitude": 73.2289869,
+    "latitude": 33.6984941,
+    "longitude": 73.23,
     "marla": 13,
     "sqft": 2925,
     "price_pkr": 55000000,
@@ -1414,7 +1477,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_p_a_quality_13_marla_house_for_sale_in_sector_p_corner_park_face_back_open_3_side_open_5_master_bedroom_bahria_enclave_islamabad-54287196-11976-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 65,
@@ -1422,8 +1486,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector N",
     "society": "Bahria Enclave",
-    "latitude": 33.6925202,
-    "longitude": 73.2336577,
+    "latitude": 33.6930748,
+    "longitude": 73.2339754,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 24000000,
@@ -1436,7 +1500,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_n_5_marla_very_reasonable_house_available_for_sale_in_bahria_enclave_islamabad-54558522-11975-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 66,
@@ -1444,8 +1509,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6941201,
-    "longitude": 73.2194801,
+    "latitude": 33.6945315,
+    "longitude": 73.220295,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 67000000,
@@ -1458,7 +1523,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_10_marla_luxury_modern_house_available_for_sale_in_bahria_enclave_islamabad-54503177-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 67,
@@ -1466,8 +1532,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector N",
     "society": "Bahria Enclave",
-    "latitude": 33.6918044,
-    "longitude": 73.2345908,
+    "latitude": 33.6936012,
+    "longitude": 73.2359425,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 38500000,
@@ -1480,7 +1546,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_n_8_marla_modern_house_available_for_sale_in_bahria_enclave_islamabad-54392701-11975-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 68,
@@ -1488,8 +1555,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector F1",
     "society": "Bahria Enclave",
-    "latitude": 33.6885765,
-    "longitude": 73.229123,
+    "latitude": 33.6894848,
+    "longitude": 73.2285672,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 52000000,
@@ -1502,7 +1569,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_f1_10_marla_luxury_modern_house_available_for_sale_in_bahria_enclave_islamabad-54392509-11986-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 69,
@@ -1510,8 +1578,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector M",
     "society": "Bahria Enclave",
-    "latitude": 33.6964417,
-    "longitude": 73.2544368,
+    "latitude": 33.6965936,
+    "longitude": 73.2554911,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 47000000,
@@ -1524,7 +1592,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_m_10_marla_full_luxury_house_available_for_sale_in_bahria_enclave_islamabad-54350443-11977-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 70,
@@ -1532,8 +1601,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector A",
     "society": "Bahria Enclave",
-    "latitude": 33.6914013,
-    "longitude": 73.2156247,
+    "latitude": 33.6926386,
+    "longitude": 73.2160825,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 55000000,
@@ -1546,7 +1615,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_a_10_marla_modern_house_available_for_sale_in_bahria_enclave_islamabad-54338702-11970-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 71,
@@ -1554,8 +1624,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector B1",
     "society": "Bahria Enclave",
-    "latitude": 33.6957672,
-    "longitude": 73.2219556,
+    "latitude": 33.6966688,
+    "longitude": 73.2230871,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 28500000,
@@ -1568,7 +1638,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_b1_5_marla_modern_house_available_for_sale_in_bahria_enclave_islamabad-54337430-11972-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 72,
@@ -1576,8 +1647,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector C1",
     "society": "Bahria Enclave",
-    "latitude": 33.6815702,
-    "longitude": 73.2209628,
+    "latitude": 33.6811246,
+    "longitude": 73.2204259,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 55500000,
@@ -1590,7 +1661,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_c1_10_marla_house_available_for_sale_in_bahria_enclave_islamabad-54360971-11987-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 73,
@@ -1598,8 +1670,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6955174,
-    "longitude": 73.2204778,
+    "latitude": 33.6966405,
+    "longitude": 73.2197456,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 49500000,
@@ -1612,7 +1684,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_10_marla_house_available_for_sale-53760256-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 74,
@@ -1620,8 +1693,8 @@
     "city": "Islamabad",
     "sector": "Bahria Garden City - Zone 2",
     "society": "Bahria Garden City",
-    "latitude": 33.5249095,
-    "longitude": 73.1223709,
+    "latitude": 33.5266459,
+    "longitude": 73.1235643,
     "marla": 12,
     "sqft": 2700,
     "price_pkr": 72500000,
@@ -1634,7 +1707,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_garden_city_bahria_garden_city_-_zone_2_12_marla_brand_new_house_available_for_sale_in_bahria_garden_city_zone_2-54612469-10606-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 75,
@@ -1642,8 +1716,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave",
     "society": "Bahria Enclave",
-    "latitude": 33.6951473,
-    "longitude": 73.2198206,
+    "latitude": 33.69528,
+    "longitude": 73.2220436,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 27000000,
@@ -1656,7 +1730,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_town_bahria_enclave_brand_new_5_marla_house_for_sale_in_sector_i_bahria_enclave_islamabad_investor_rate-54494954-1705-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 76,
@@ -1664,8 +1739,8 @@
     "city": "Islamabad",
     "sector": "Bahria Enclave - Sector N",
     "society": "Bahria Enclave",
-    "latitude": 33.6939866,
-    "longitude": 73.2339843,
+    "latitude": 33.6919121,
+    "longitude": 73.2347687,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 31000000,
@@ -1679,7 +1754,8 @@
     "source_url": "https://www.zameen.com/Property/bahria_enclave_bahria_enclave_-_sector_n_bahria_enclave_islambad_sector_n_7_marla_brand_new_corner_house_available_for_sale-54411816-11975-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 77,
@@ -1687,8 +1763,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6502884,
-    "longitude": 72.9680996,
+    "latitude": 33.6512039,
+    "longitude": 72.9673136,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 180000000,
@@ -1702,7 +1778,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_proper_corner_01_kanal_50x90_brand_new_luxury_designer_house_for_sale_in_g-13_islamabad-54566065-330-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305567380-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 78,
@@ -1710,8 +1787,8 @@
     "city": "Islamabad",
     "sector": "G-13/3",
     "society": "G-13",
-    "latitude": 33.6570432,
-    "longitude": 72.9641889,
+    "latitude": 33.6574525,
+    "longitude": 72.9652491,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 69000000,
@@ -1724,7 +1801,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_70_feet_road_7_marla_30x60_house_for_sale_in_g-13_3_islamabad-53819596-330-1.html",
     "image_url": "https://media.zameen.com/thumbnails/300844931-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 79,
@@ -1732,8 +1810,8 @@
     "city": "Islamabad",
     "sector": "G-13/1",
     "society": "G-13",
-    "latitude": 33.6458123,
-    "longitude": 72.9608776,
+    "latitude": 33.6461769,
+    "longitude": 72.9622965,
     "marla": 4.4,
     "sqft": 990,
     "price_pkr": 42000000,
@@ -1746,7 +1824,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_g-13_1_st_105_corner_house_25x40_kanal_extra_land_sun_face_for_sale-54369931-330-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305546336-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 80,
@@ -1754,8 +1833,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6518034,
-    "longitude": 72.9681821,
+    "latitude": 33.6517939,
+    "longitude": 72.9657225,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 107500000,
@@ -1768,7 +1847,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_40_80_doubble_story_house_available_for_sale-54492613-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 81,
@@ -1776,8 +1856,8 @@
     "city": "Islamabad",
     "sector": "G-13/3",
     "society": "G-13",
-    "latitude": 33.6580484,
-    "longitude": 72.9658377,
+    "latitude": 33.6564432,
+    "longitude": 72.9658161,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 90000000,
@@ -1790,7 +1870,8 @@
     "source_url": "https://www.zameen.com/Property/g_13_g-13_3_prime_location-54600302-3339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 82,
@@ -1798,8 +1879,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6510024,
-    "longitude": 72.9663467,
+    "latitude": 33.6523203,
+    "longitude": 72.9676887,
     "marla": 4,
     "sqft": 900,
     "price_pkr": 39000000,
@@ -1812,7 +1893,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_25_40_double_storey_house_available_for_sale_in_g13-54556219-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 83,
@@ -1820,8 +1902,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6507202,
-    "longitude": 72.9675624,
+    "latitude": 33.6506312,
+    "longitude": 72.9665154,
     "marla": 4,
     "sqft": 900,
     "price_pkr": 39500000,
@@ -1834,7 +1916,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_25x40_brand_new_luxury_tile_flooring_prime_location_house_for_sale_in_g-13-54572288-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 84,
@@ -1842,8 +1925,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6518169,
-    "longitude": 72.9675838,
+    "latitude": 33.6527402,
+    "longitude": 72.9659663,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 53500000,
@@ -1856,7 +1939,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_30x60_7_marla_house_prime_location_for_sale_in_g-13-54572201-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 85,
@@ -1864,8 +1948,8 @@
     "city": "Islamabad",
     "sector": "G-13/1",
     "society": "G-13",
-    "latitude": 33.6451718,
-    "longitude": 72.9614656,
+    "latitude": 33.6451676,
+    "longitude": 72.9628635,
     "marla": 4,
     "sqft": 900,
     "price_pkr": 43000000,
@@ -1878,7 +1962,8 @@
     "source_url": "https://www.zameen.com/Property/g_13_g-13_1_g_13_1_size_25x40_4_marla_brand_new_house_for_sale_beautiful_location-54586877-3337-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 86,
@@ -1886,8 +1971,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6526536,
-    "longitude": 72.9682014,
+    "latitude": 33.6513797,
+    "longitude": 72.9682631,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 160000000,
@@ -1901,7 +1986,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_1_kanal_brand_new_luxury_double_unit_house_for_sale_in_g-13_islamabad_prime_cda_location_6_bedrooms-54545994-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 87,
@@ -1909,8 +1995,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.652777,
-    "longitude": 72.9676648,
+    "latitude": 33.651075,
+    "longitude": 72.9652568,
     "marla": 4.4,
     "sqft": 990,
     "price_pkr": 45500000,
@@ -1924,7 +2010,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_g-13_proper_corner_house_brand_new-54543605-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 88,
@@ -1932,8 +2019,8 @@
     "city": "Islamabad",
     "sector": "G-13/1",
     "society": "G-13",
-    "latitude": 33.6466378,
-    "longitude": 72.9630161,
+    "latitude": 33.6457576,
+    "longitude": 72.9612725,
     "marla": 4.4,
     "sqft": 990,
     "price_pkr": 33500000,
@@ -1946,7 +2033,8 @@
     "source_url": "https://www.zameen.com/Property/g_13_g-13_1_like_that_brand_4_marla_house_for_sale_in_ideal_location_g13_1_nearly_kashmir_highway_islamabad-54534493-3337-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 89,
@@ -1954,8 +2042,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6508993,
-    "longitude": 72.9667995,
+    "latitude": 33.6531114,
+    "longitude": 72.9673574,
     "marla": 4,
     "sqft": 900,
     "price_pkr": 33000000,
@@ -1968,7 +2056,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_4_marla_25x40_brand_new_house_for_sale_in_g-13_islamabad-54451415-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 90,
@@ -1976,8 +2065,8 @@
     "city": "Islamabad",
     "sector": "G-13/3",
     "society": "G-13",
-    "latitude": 33.6565251,
-    "longitude": 72.963836,
+    "latitude": 33.6570332,
+    "longitude": 72.9642249,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 120000000,
@@ -1990,7 +2079,8 @@
     "source_url": "https://www.zameen.com/Property/g_13_g-13_3_14_marla_brand_new_house_for_sale_located_at_prime_location_of_g-13_3_islamabad-54549980-3339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 91,
@@ -1998,8 +2088,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6503029,
-    "longitude": 72.9660849,
+    "latitude": 33.6502749,
+    "longitude": 72.9674628,
     "marla": 14,
     "sqft": 3150,
     "price_pkr": 120000000,
@@ -2013,7 +2103,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_g-13_40x80_brand_new_double_story_house_available_for_sale-54585591-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 92,
@@ -2021,8 +2112,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6509966,
-    "longitude": 72.9673242,
+    "latitude": 33.6524136,
+    "longitude": 72.9649636,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 167000000,
@@ -2035,7 +2126,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_g-13_brand_new_500_yds_architect_design_double_story_house_6_master_bedrooms_attached_stylish_bathrooms_two_drawing_dining_two_tv_lounge_two_american_style_kitchen_with_dirty_kitchen_store_two_sqtr_reasonable_price-52828835-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 93,
@@ -2043,8 +2135,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6530886,
-    "longitude": 72.9665883,
+    "latitude": 33.6522313,
+    "longitude": 72.9687084,
     "marla": 14.2,
     "sqft": 3195,
     "price_pkr": 107000000,
@@ -2057,7 +2149,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_40x80_brand_new_house_for_sale_in_g14_4-54616315-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 94,
@@ -2065,8 +2158,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6530302,
-    "longitude": 72.9682107,
+    "latitude": 33.6501778,
+    "longitude": 72.9656736,
     "marla": 8,
     "sqft": 1800,
     "price_pkr": 71500000,
@@ -2079,7 +2172,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_parking_face_30x60_brand_new_house_for_sale_in_g13-54616248-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 95,
@@ -2087,8 +2181,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6530841,
-    "longitude": 72.9663405,
+    "latitude": 33.6535246,
+    "longitude": 72.9662698,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 68000000,
@@ -2101,7 +2195,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_3060_7_marla_brand_new_house_for_sale_in_g-13_islamabad_70_ft_wide_road_prime_location-54571227-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 96,
@@ -2109,8 +2204,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6508805,
-    "longitude": 72.9659271,
+    "latitude": 33.6506186,
+    "longitude": 72.9686271,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 59000000,
@@ -2123,7 +2218,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_3060_7_marla_like_new_park-facing_house_for_sale_in_g-13_islamabad-54571243-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 97,
@@ -2131,8 +2227,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6508092,
-    "longitude": 72.9658597,
+    "latitude": 33.6514651,
+    "longitude": 72.9643921,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 90000000,
@@ -2146,7 +2242,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_3570_10_marla_brand_new_park-facing_house_for_sale_in_g-13_islamabad-54571259-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 98,
@@ -2154,8 +2251,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6520913,
-    "longitude": 72.9679475,
+    "latitude": 33.6532768,
+    "longitude": 72.9683237,
     "marla": 7,
     "sqft": 1575,
     "price_pkr": 55000000,
@@ -2168,7 +2265,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_3060_7_marla_like_new_house_for_sale_in_g-13_islamabad-54615988-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 99,
@@ -2176,8 +2274,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.6527404,
-    "longitude": 72.966685,
+    "latitude": 33.6496247,
+    "longitude": 72.9668506,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 180000000,
@@ -2190,7 +2288,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_1_kanal_corner_luxury_house_for_sale_in_g-13_islamabad-54615978-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 100,
@@ -2198,8 +2297,8 @@
     "city": "Islamabad",
     "sector": "G-13",
     "society": "G-13",
-    "latitude": 33.652178,
-    "longitude": 72.9676455,
+    "latitude": 33.6532456,
+    "longitude": 72.9649217,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 165000000,
@@ -2212,7 +2311,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_g-13_1_kanal_brand_new_luxury_house_for_sale_in_g-13_islamabad-52862364-330-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 101,
@@ -2220,8 +2320,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 1",
     "society": "DHA Defence",
-    "latitude": 33.5381569,
-    "longitude": 73.0992117,
+    "latitude": 33.5398967,
+    "longitude": 73.0987299,
     "marla": 21,
     "sqft": 4725,
     "price_pkr": 90000000,
@@ -2234,7 +2334,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_1_21_marla_corner_defence_villa_for_sale_in_dha_phase_1_sector_f_islamabad_4_bed_solar_6_20_crore-54523234-376-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305171457-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 102,
@@ -2242,8 +2343,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5317202,
-    "longitude": 73.1679237,
+    "latitude": 33.5290467,
+    "longitude": 73.1677919,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 109000000,
@@ -2256,7 +2357,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_one_kanal_beautiful_luxurious_full_furnished_house_prime_location_of_dha2-52696760-339-1.html",
     "image_url": "https://media.zameen.com/thumbnails/303708859-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 103,
@@ -2264,8 +2366,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5312413,
-    "longitude": 73.1670109,
+    "latitude": 33.5311854,
+    "longitude": 73.1652963,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 125000000,
@@ -2279,7 +2381,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_ultra_modern_fully_furnished_1_kanal_designer_house_ready_for_sale_in_dha_defence_phase_2_islamabad-54530474-339-1.html",
     "image_url": "https://media.zameen.com/thumbnails/305230242-400x300.jpeg",
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 104,
@@ -2287,8 +2390,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5295265,
-    "longitude": 73.1679442,
+    "latitude": 33.5310031,
+    "longitude": 73.1690359,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 122500000,
@@ -2301,7 +2404,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_luxury_house_for_sale_in_dha_phase_2_islamabad-53583485-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 105,
@@ -2309,8 +2413,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5299885,
-    "longitude": 73.1679793,
+    "latitude": 33.5289496,
+    "longitude": 73.1660053,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 105000000,
@@ -2323,7 +2427,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_fully_furnished_elegant_house_for_sale_in_dha_phase_2_with_modern_architecure_on_most_prime_location_near_central_park-51068072-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 106,
@@ -2331,8 +2436,8 @@
     "city": "Islamabad",
     "sector": "DHA Phase 3 - Block B",
     "society": "DHA Defence Phase 3",
-    "latitude": 33.5017951,
-    "longitude": 73.1440628,
+    "latitude": 33.5008742,
+    "longitude": 73.1443753,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 66000000,
@@ -2345,7 +2450,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_phase_3_dha_phase_3_-_block_b_dha_3_kanal_house_top_height_most_location-53508306-16227-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 107,
@@ -2353,8 +2459,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5301951,
-    "longitude": 73.1684172,
+    "latitude": 33.5322964,
+    "longitude": 73.1666006,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 115000000,
@@ -2367,7 +2473,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_designer_kanal_owner_built_kanal_house_near_central_park_just_2_years_used-53721807-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 108,
@@ -2375,8 +2482,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5311653,
-    "longitude": 73.1660868,
+    "latitude": 33.5293904,
+    "longitude": 73.1689547,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 137500000,
@@ -2390,7 +2497,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_one_kanal_brand_new_lush_fully_furnished_designer_house_for_sale_in_dha_2_isb-54565940-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 109,
@@ -2398,8 +2506,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.529372,
-    "longitude": 73.1660303,
+    "latitude": 33.5302369,
+    "longitude": 73.1647257,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 95000000,
@@ -2412,7 +2520,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_owner_built_house_for_sale_in_dha_phase_2_islamabad-54137974-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 110,
@@ -2420,8 +2529,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5317055,
-    "longitude": 73.1679963,
+    "latitude": 33.5320486,
+    "longitude": 73.1686517,
     "marla": 5,
     "sqft": 1125,
     "price_pkr": 50000000,
@@ -2435,7 +2544,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_5_marla_brand_new_double_unit_house_for_sale_in_dha_phase_2_islamabad-54606427-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 111,
@@ -2443,8 +2553,8 @@
     "city": "Islamabad",
     "sector": "DHA Phase 3 - Block B",
     "society": "DHA Defence Phase 3",
-    "latitude": 33.4993186,
-    "longitude": 73.1453548,
+    "latitude": 33.4998649,
+    "longitude": 73.1449413,
     "marla": 13,
     "sqft": 2925,
     "price_pkr": 58500000,
@@ -2457,7 +2567,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_phase_3_dha_phase_3_-_block_b_13_marla_brand_new_house_for_sale_in_dha_phase-3_rawalpindi-54514645-16227-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 112,
@@ -2465,8 +2576,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5319318,
-    "longitude": 73.1675486,
+    "latitude": 33.5283965,
+    "longitude": 73.1671807,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 139000000,
@@ -2479,7 +2590,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_modern_and_practical_solid_house_available_for_sale_in_dha_phase_2_islamabad-52732642-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 113,
@@ -2487,8 +2599,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 5",
     "society": "DHA Defence",
-    "latitude": 33.5284452,
-    "longitude": 73.2088856,
+    "latitude": 33.5283788,
+    "longitude": 73.2093058,
     "marla": 48,
     "sqft": 10800,
     "price_pkr": 179500000,
@@ -2501,7 +2613,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_5_48_marla_grey_structure_with_28_marla_lawn_dha_phase_5-54538863-10991-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 114,
@@ -2509,8 +2622,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5293839,
-    "longitude": 73.1656195,
+    "latitude": 33.5320174,
+    "longitude": 73.1652544,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 72500000,
@@ -2523,7 +2636,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_10_marla_beautiful_house_for_sale_in_dha_phase-2_islamabad-54321074-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 115,
@@ -2531,8 +2645,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5319036,
-    "longitude": 73.1675258,
+    "latitude": 33.5303888,
+    "longitude": 73.1697246,
     "marla": 10,
     "sqft": 2250,
     "price_pkr": 67000000,
@@ -2545,7 +2659,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_10_marla_owner-built_luxury_double_unit_house_for_sale-54508586-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 116,
@@ -2553,8 +2668,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 3",
     "society": "DHA Defence",
-    "latitude": 33.5004598,
-    "longitude": 73.1456762,
+    "latitude": 33.5008742,
+    "longitude": 73.1443753,
     "marla": 13,
     "sqft": 2925,
     "price_pkr": 58500000,
@@ -2567,7 +2682,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_3_13_marla_brand_new_house_for_sale_in_dha_phase-3_rawalpindi-54574103-8412-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 117,
@@ -2575,8 +2691,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 3",
     "society": "DHA Defence",
-    "latitude": 33.5001815,
-    "longitude": 73.1454905,
+    "latitude": 33.4998649,
+    "longitude": 73.1449413,
     "marla": 11,
     "sqft": 2475,
     "price_pkr": 49000000,
@@ -2589,7 +2705,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_3_11_marla_owner_built_house_for_sale_dha_phase_3_sector_b-54574394-8412-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 118,
@@ -2597,8 +2714,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5314694,
-    "longitude": 73.1662099,
+    "latitude": 33.5290403,
+    "longitude": 73.1649914,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 100000000,
@@ -2612,7 +2729,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_modern_design_double_unit_1_kanal_brand_new_designer_house_ready_for_sale_in_dha_defence_phase_2_islamabad-54247327-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 119,
@@ -2620,8 +2738,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5297464,
-    "longitude": 73.1664557,
+    "latitude": 33.5327876,
+    "longitude": 73.1674475,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 122500000,
@@ -2635,7 +2753,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_elegant_designer_house_with_swimming_pool_ready_for_sale_in_dha_defence_phase_2_islamabad-54247604-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 120,
@@ -2643,8 +2762,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5297125,
-    "longitude": 73.1673361,
+    "latitude": 33.5285459,
+    "longitude": 73.1687002,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 145000000,
@@ -2657,7 +2776,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_straight_line_design_1_kanal_brand_new_house_with_gas_meter_installed_is_ready_for_sale_in_dha_defence_phase_2_islamabad-54347009-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 121,
@@ -2665,8 +2785,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.529769,
-    "longitude": 73.1668338,
+    "latitude": 33.5310221,
+    "longitude": 73.164244,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 155000000,
@@ -2679,7 +2799,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_western_design_1_kanal_brand_new_designer_house_ready_for_sale_in_dha_defence_phase_2_islamabad-54246273-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 122,
@@ -2687,8 +2808,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5293841,
-    "longitude": 73.1683069,
+    "latitude": 33.5317191,
+    "longitude": 73.1696481,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 149000000,
@@ -2701,7 +2822,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_luxury_house_for_sale_in_dha_phase_2_islamabad_prime_location-54471181-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 123,
@@ -2709,8 +2831,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5300523,
-    "longitude": 73.1669513,
+    "latitude": 33.5280908,
+    "longitude": 73.1661582,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 108000000,
@@ -2723,7 +2845,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_one_kanal_ultra_luxury_house_for_sale_in_dha_phase_2_islamabad-54104545-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 124,
@@ -2731,8 +2854,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5307409,
-    "longitude": 73.1682897,
+    "latitude": 33.5328214,
+    "longitude": 73.1657851,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 150000000,
@@ -2745,7 +2868,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_fully_furnished_1_kanal_spanish_style_house_for_sale_in_dha_phase_2-54480942-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 125,
@@ -2753,8 +2877,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5302528,
-    "longitude": 73.16833,
+    "latitude": 33.5294816,
+    "longitude": 73.1699699,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 95000000,
@@ -2767,7 +2891,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_owner_built_house_for_sale_in_dha_phase_2_islamabad-54137974-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 126,
@@ -2775,8 +2900,8 @@
     "city": "Islamabad",
     "sector": "DHA Defence Phase 2",
     "society": "DHA Defence",
-    "latitude": 33.5304958,
-    "longitude": 73.1671723,
+    "latitude": 33.5295904,
+    "longitude": 73.1640734,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 95000000,
@@ -2789,7 +2914,8 @@
     "source_url": "https://www.zameen.com/Property/dha_defence_dha_defence_phase_2_1_kanal_owner_built_house_for_sale_in_dha_phase_2_islamabad-54137974-339-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 127,
@@ -2797,8 +2923,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7221089,
-    "longitude": 73.0555933,
+    "latitude": 33.7215232,
+    "longitude": 73.0576047,
     "marla": 72,
     "sqft": 16200,
     "price_pkr": 840000000,
@@ -2811,7 +2937,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_investor_alert_ultra-premium_f-7_property_islamabad_1_777_sq_yards_margalla_facing_3-side_open_massive_lawn-54119721-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 128,
@@ -2819,8 +2946,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7218588,
-    "longitude": 73.0560865,
+    "latitude": 33.7221132,
+    "longitude": 73.0560123,
     "marla": 42,
     "sqft": 9450,
     "price_pkr": 540000000,
@@ -2833,7 +2960,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_80x120_corner_prime_location_house_is_for_sale-54498799-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 129,
@@ -2841,8 +2969,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7205502,
-    "longitude": 73.0579347,
+    "latitude": 33.7226396,
+    "longitude": 73.05798,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 400000000,
@@ -2855,7 +2983,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_three_sides_corner_666_square_yards_house-54500669-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 130,
@@ -2863,8 +2992,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7210554,
-    "longitude": 73.0569577,
+    "latitude": 33.7209505,
+    "longitude": 73.0568058,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 280000000,
@@ -2877,7 +3006,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_investor_price_house_available_for_sale_in_f7-54145651-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 131,
@@ -2885,8 +3015,8 @@
     "city": "Islamabad",
     "sector": "F-7/3",
     "society": "F-7",
-    "latitude": 33.7279452,
-    "longitude": 73.0598819,
+    "latitude": 33.7277637,
+    "longitude": 73.0597125,
     "marla": 80,
     "sqft": 18000,
     "price_pkr": 800000000,
@@ -2899,7 +3029,8 @@
     "source_url": "https://www.zameen.com/Property/f_7_f-7_3_investor_price_house_available_for_sale_f7-52573056-3309-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 132,
@@ -2907,8 +3038,8 @@
     "city": "Islamabad",
     "sector": "F-7/3",
     "society": "F-7",
-    "latitude": 33.7267475,
-    "longitude": 73.0597675,
+    "latitude": 33.7267544,
+    "longitude": 73.06028,
     "marla": 52,
     "sqft": 11700,
     "price_pkr": 1000000000,
@@ -2921,7 +3052,8 @@
     "source_url": "https://www.zameen.com/Property/f_7_f-7_3_f-7_3_excellent_house_1244_square_yard_for_sale-52116517-3309-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 133,
@@ -2929,8 +3061,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7222047,
-    "longitude": 73.05789,
+    "latitude": 33.7230595,
+    "longitude": 73.0562562,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 550000000,
@@ -2946,7 +3078,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_brand_new_designer_corner_house_for_sale_in_f-7_islamabad_swimming_pool_lift_luxury_living-54369119-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 134,
@@ -2954,8 +3087,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7208567,
-    "longitude": 73.0572181,
+    "latitude": 33.721699,
+    "longitude": 73.0585549,
     "marla": 40,
     "sqft": 9000,
     "price_pkr": 800000000,
@@ -2968,7 +3101,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_brand_new_luxury_house_for_sale_in_f-7_islamabad_1_000_sq_yards_7_bedrooms-54575888-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 135,
@@ -2976,8 +3110,8 @@
     "city": "Islamabad",
     "sector": "F-7/3",
     "society": "F-7",
-    "latitude": 33.7265151,
-    "longitude": 73.0590433,
+    "latitude": 33.7273444,
+    "longitude": 73.0586875,
     "marla": 80,
     "sqft": 18000,
     "price_pkr": 3500000000,
@@ -2990,7 +3124,8 @@
     "source_url": "https://www.zameen.com/Property/f_7_f-7_3_top_most_location_brand_new_house_on_2000_sq_yard_f-7_3-53864794-3309-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 136,
@@ -2998,8 +3133,8 @@
     "city": "Islamabad",
     "sector": "F-7/3",
     "society": "F-7",
-    "latitude": 33.7280864,
-    "longitude": 73.0597356,
+    "latitude": 33.7278708,
+    "longitude": 73.0606554,
     "marla": 50,
     "sqft": 11250,
     "price_pkr": 550000000,
@@ -3012,7 +3147,8 @@
     "source_url": "https://www.zameen.com/Property/f_7_f-7_3_f_7_house_available_80_140_house_near_margla_road-53022784-3309-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 137,
@@ -3020,8 +3156,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7222236,
-    "longitude": 73.0578172,
+    "latitude": 33.7213943,
+    "longitude": 73.0555462,
     "marla": 42,
     "sqft": 9450,
     "price_pkr": 490000000,
@@ -3034,7 +3170,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_investor_alert_premium_f-7_property_for_sale_prime_f-7_main_road_location_cda_transfer_front_open_where_luxury_meets_legacy-54351360-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 138,
@@ -3042,8 +3179,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7232759,
-    "longitude": 73.0568669,
+    "latitude": 33.7234307,
+    "longitude": 73.0576485,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 550000000,
@@ -3056,7 +3193,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_investor_alert_brand_new_luxury_house_for_sale_in_f-7_islamabad_prime_f-7_location_front_open_brand_new_construction-54351267-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 139,
@@ -3064,8 +3202,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.722376,
-    "longitude": 73.0570539,
+    "latitude": 33.7205942,
+    "longitude": 73.0577539,
     "marla": 20,
     "sqft": 4500,
     "price_pkr": 300000000,
@@ -3078,7 +3216,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_livable_house_50_90_for_sale_prime_location_f-7-54142549-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 140,
@@ -3086,8 +3225,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7220749,
-    "longitude": 73.0576154,
+    "latitude": 33.7227329,
+    "longitude": 73.0552528,
     "marla": 40,
     "sqft": 9000,
     "price_pkr": 390000000,
@@ -3100,7 +3239,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_prime_2_kanal_margalla_facing_property_for_sale_in_f-7_islamabad_demolishable_house-54442114-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 141,
@@ -3108,8 +3248,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7218954,
-    "longitude": 73.0571371,
+    "latitude": 33.7225506,
+    "longitude": 73.0590006,
     "marla": 160,
     "sqft": 36000,
     "price_pkr": 1750000000,
@@ -3122,7 +3262,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_f_7_main_margla_road_house_available_2000_square_yards_100_180_with_4_kanal_extra_land-53938009-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 142,
@@ -3130,8 +3271,8 @@
     "city": "Islamabad",
     "sector": "F-7/2",
     "society": "F-7",
-    "latitude": 33.7232446,
-    "longitude": 73.0521827,
+    "latitude": 33.7238046,
+    "longitude": 73.0508582,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 290000000,
@@ -3144,7 +3285,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_f_7_2_old_house_size_60_100_666_square_yards-53178506-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 143,
@@ -3152,8 +3294,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7226361,
-    "longitude": 73.0581668,
+    "latitude": 33.7204971,
+    "longitude": 73.0559633,
     "marla": 42,
     "sqft": 9450,
     "price_pkr": 450000000,
@@ -3166,7 +3308,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_f_7_house_available_80_120_on_beautiful_location_near_green_belt-54441641-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 144,
@@ -3174,8 +3317,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7233649,
-    "longitude": 73.056316,
+    "latitude": 33.7238439,
+    "longitude": 73.05656,
     "marla": 44,
     "sqft": 9900,
     "price_pkr": 630000000,
@@ -3188,7 +3331,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_f-7_end_corner_house_for_sale_with_extra_land-53609481-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 145,
@@ -3196,8 +3340,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7222169,
-    "longitude": 73.058367,
+    "latitude": 33.7209379,
+    "longitude": 73.0589193,
     "marla": 26,
     "sqft": 5850,
     "price_pkr": 360000000,
@@ -3210,7 +3354,8 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_f-7_666_sq_yard_cornor_house_for_sale-54356264-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   },
   {
     "id": 146,
@@ -3218,8 +3363,8 @@
     "city": "Islamabad",
     "sector": "F-7",
     "society": "F-7",
-    "latitude": 33.7230584,
-    "longitude": 73.0559486,
+    "latitude": 33.7217844,
+    "longitude": 73.0546808,
     "marla": 28,
     "sqft": 6300,
     "price_pkr": 450000000,
@@ -3232,6 +3377,7 @@
     "source_url": "https://www.zameen.com/Property/islamabad_f-7_beautifull_n_peacfull_corner_renovated_house_for_sale_prime_location-54301010-165-1.html",
     "image_url": null,
     "data_confidence": "verified_core_fields",
-    "geocode_confidence": "real_places_verified"
+    "geocode_confidence": "sector_area_spread",
+    "location_note": "Pin marks the general area/sector, not the exact building \u2014 source data has no street address."
   }
 ]

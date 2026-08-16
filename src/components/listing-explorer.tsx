@@ -18,6 +18,7 @@ type Listing = {
   bedrooms: number;
   bathrooms: number | null;
   source_url: string;
+  location_note: string;
 };
 
 type Props = { listings: Listing[] };
@@ -53,6 +54,7 @@ export default function ListingExplorer({ listings }: Props) {
       style: "mapbox://styles/mapbox/streets-v12",
       center: ISLAMABAD_CENTER,
       zoom: 10,
+      maxZoom: 15,
     });
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
     map.on("load", () => setMapReady(true));
@@ -190,6 +192,7 @@ export default function ListingExplorer({ listings }: Props) {
                 {selectedListing.bedrooms} beds · {selectedListing.bathrooms ?? "N/A"} baths ·{" "}
                 {selectedListing.marla} marla
               </p>
+              <p className="mt-2 text-xs text-gray-500">{selectedListing.location_note}</p>
               <a
                 href={selectedListing.source_url}
                 target="_blank"

@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-const GEMINI_MODEL = "gemini-3.5-flash";
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const MIN_TEXT_LENGTH = 10;
 
 function buildPrompt(userText: string): string {
@@ -35,6 +35,37 @@ function stripMarkdownFences(text: string): string {
     .trim();
 }
 
+const MAX_RETRIES = 2;
+const MAX_RETRY_DELAY_MS = 10000;
+
+function parseRetryDelayMs(bodyText: string): number | null {
+  const match = bodyText.match(/"retryDelay":\s*"(\d+(?:\.\d+)?)s"/);
+  return match ? Math.min(Math.ceil(Number(match[1]) * 1000), MAX_RETRY_DELAY_MS) : null;
+}
+
+async function callGemini(prompt: string, apiKey: string): Promise<Response> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+  const body = JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] });
+
+  let res: Response;
+  for (let attempt = 0; ; attempt++) {
+    res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+    });
+    if (res.status !== 429 || attempt >= MAX_RETRIES) return res;
+
+    const bodyText = await res.clone().text();
+    const delayMs = parseRetryDelayMs(bodyText) ?? 2000 * (attempt + 1);
+    console.error(
+      `[extract-needs] Gemini rate-limited (429), retrying in ${delayMs}ms (attempt ${attempt + 1}/${MAX_RETRIES}):`,
+      bodyText
+    );
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+}
+
 export async function POST(request: NextRequest) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -64,17 +95,9 @@ export async function POST(request: NextRequest) {
 
   let geminiRes: Response;
   try {
-    geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: buildPrompt(text.trim()) }] }],
-        }),
-      }
-    );
-  } catch {
+    geminiRes = await callGemini(buildPrompt(text.trim()), apiKey);
+  } catch (err) {
+    console.error("[extract-needs] Gemini fetch threw:", err);
     return Response.json(
       { error: "Couldn't reach the matching service. Please check your connection and try again." },
       { status: 502 }
@@ -82,6 +105,11 @@ export async function POST(request: NextRequest) {
   }
 
   if (!geminiRes.ok) {
+    const bodyText = await geminiRes.text();
+    console.error(
+      `[extract-needs] Gemini responded with non-OK status ${geminiRes.status} ${geminiRes.statusText}:`,
+      bodyText
+    );
     return Response.json(
       { error: "The matching service had trouble processing that. Please try again in a moment." },
       { status: 502 }
@@ -92,6 +120,7 @@ export async function POST(request: NextRequest) {
   const rawText: unknown = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
   if (typeof rawText !== "string" || rawText.trim().length === 0) {
+    console.error("[extract-needs] Gemini response missing text content:", JSON.stringify(data, null, 2));
     return Response.json(
       { error: "We couldn't understand a response from the matching service. Please try rephrasing your description." },
       { status: 502 }
@@ -101,7 +130,8 @@ export async function POST(request: NextRequest) {
   let needs: unknown;
   try {
     needs = JSON.parse(stripMarkdownFences(rawText));
-  } catch {
+  } catch (err) {
+    console.error("[extract-needs] Failed to JSON.parse Gemini text. Error:", err, "Raw text:", rawText);
     return Response.json(
       { error: "We had trouble understanding your description. Please try rephrasing it." },
       { status: 502 }

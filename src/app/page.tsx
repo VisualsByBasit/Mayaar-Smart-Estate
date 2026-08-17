@@ -1,6 +1,5 @@
-import ListingExplorer from "@/components/listing-explorer";
-import listings from "@/data/listings.json";
+import LandingPage from "@/components/landing-page";
 
 export default function Home() {
-  return <ListingExplorer listings={listings} />;
+  return <LandingPage />;
 }

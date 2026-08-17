@@ -77,7 +77,7 @@ export default function ListingExplorer({ listings }: Props) {
 
     filteredListings.forEach((listing) => {
       const element = document.createElement("button");
-      element.className = "listing-marker";
+      element.className = "listing-dot";
       element.type = "button";
       element.title = `${listing.title} — ${listing.price_display}`;
       element.setAttribute("aria-label", `Open ${listing.title}`);

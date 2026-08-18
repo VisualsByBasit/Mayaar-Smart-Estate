@@ -5,6 +5,7 @@ import Link from "next/link";
 import { BarChart3, Bookmark, Columns2 } from "lucide-react";
 
 import OverBudgetBadge from "@/components/over-budget-badge";
+import ProximityNote from "@/components/proximity-note";
 import { type Match, formatPkr, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
@@ -80,6 +81,7 @@ export default function MatchCard({
           <p className="mt-1 text-[0.8125rem] text-ink-soft">
             {match.bedrooms} bed · {match.bathrooms ?? "—"} bath · {match.marla} marla
           </p>
+          <ProximityNote listing={match} className="mt-1.5" />
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import { type Candidate, selectCandidates } from "@/lib/candidates";
-import { type Listing, formatPkrShort } from "@/lib/listings";
+import { describeProximity } from "@/lib/landmark";
+import { formatPkrShort } from "@/lib/listings";
 import { type Needs, normalizeNeeds } from "@/lib/needs";
 
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
@@ -82,6 +83,13 @@ function toPromptCandidate(candidate: Candidate) {
     falls_short: candidate.gaps,
     cannot_confirm: candidate.unknown,
     over_ceiling: candidate.overCeiling,
+    ...(candidate.near
+      ? {
+          distance_from_landmark_km: Number(candidate.near.km.toFixed(1)),
+          estimated_drive_minutes: candidate.near.minutes,
+          distance_in_words: describeProximity(candidate.near),
+        }
+      : {}),
   };
 }
 
@@ -99,6 +107,11 @@ function describeBrief(needs: Needs): string {
     lines.push(`- Household: ${needs.family_size} people living there (this is not a bedroom count)`);
   if (needs.priorities.length) lines.push(`- Priorities, in their words: ${needs.priorities.join("; ")}`);
   if (needs.soft_signal) lines.push(`- Read between the lines: ${needs.soft_signal}`);
+  if (needs.landmark_lat && needs.landmark_lng) {
+    lines.push(
+      `- Anchored to: ${needs.landmark_name ?? "a place they named"} — every candidate below carries its measured distance and estimated drive time to it`,
+    );
+  }
   return lines.length ? lines.join("\n") : "- They gave very little to go on.";
 }
 
@@ -118,10 +131,13 @@ CHOOSING THE FIVE
 - Any home marked over_ceiling ranks last and never scores above 70, however well it matches otherwise.
 - Show real choice: at most two homes from the same society, unless the buyer named only that society.
 - Weigh their priorities and household size, not just the numbers. Do the arithmetic — sqft ÷ household size tells you whether they actually fit.
+- When the candidates carry distance_from_landmark_km, closeness is a real requirement, not a flourish: the shorter distances rank ahead of the longer ones unless something else in the brief clearly outweighs it.
 
 WRITING THE REASONING — this is the part that matters
 - Put the exact figure next to theirs: "5.5 crore against your 6 crore ceiling — 50 lakh under" beats "competitively priced". "1,850 sqft across 6 people is 308 sqft each" beats "roomy".
 - Name the sector and society, and say plainly whether it is on their list, next door to it, or off it.
+- Distance to the place they anchored to comes from distance_from_landmark_km and estimated_drive_minutes, which were measured from coordinates in code. Never estimate a distance or a travel time yourself, never name a different landmark, and never contradict these figures — your sense of which Islamabad sectors are near each other is exactly what these numbers are here to replace.
+- The drive time is straight-line distance divided by an average city speed, not a routed or traffic-aware time. Whenever you give it, attach the qualifier in the same breath: "about 8 minutes by car (estimated, not accounting for traffic)". Never write a bare minute figure.
 - Their priorities will conflict with each other. When a home is strong on one thing they asked for at the cost of another, say both in the same breath rather than glossing over it: "the DHA Phase 2 address you wanted, but reaching it costs 1.25 crore over your ceiling".
 - Never describe a shortfall as if it were met. Five bedrooms does not "meet" a six-bedroom minimum — write "one short of the 6 you asked for".
 - Lead each entry with whatever is most distinctive about that home. If two entries open the same way, rewrite the second.
@@ -244,19 +260,27 @@ export async function matchListings(rawNeeds: unknown, apiKey: string) {
 
   // The model may only rank homes it was actually shown; anything else is a
   // hallucinated id and gets dropped rather than surfaced as a real home.
-  const offered = new Map<number, Listing>(
-    candidates.map((candidate) => [candidate.listing.id, candidate.listing]),
+  const offered = new Map<number, Candidate>(
+    candidates.map((candidate) => [candidate.listing.id, candidate]),
   );
 
   const matches = (rawMatches as RawMatch[])
     .filter((match) => offered.has(match?.id))
-    .map((match) => ({
-      ...offered.get(match.id)!,
-      rank: match.rank,
-      match_percent: clampPercent(match.match_percent),
-      why_it_fits: text(match.why_it_fits),
-      not_perfect: text(match.not_perfect),
-    }))
+    .map((match) => {
+      const { listing, near } = offered.get(match.id)!;
+      return {
+        ...listing,
+        // Measured here rather than read out of the prose, so a card can never
+        // disagree with the reasoning printed beside it.
+        landmark_name: near?.name ?? null,
+        landmark_km: near ? Number(near.km.toFixed(1)) : null,
+        landmark_minutes: near?.minutes ?? null,
+        rank: match.rank,
+        match_percent: clampPercent(match.match_percent),
+        why_it_fits: text(match.why_it_fits),
+        not_perfect: text(match.not_perfect),
+      };
+    })
     .sort((a, b) => a.rank - b.rank)
     .map((match, index) => ({ ...match, rank: index + 1 }));
 

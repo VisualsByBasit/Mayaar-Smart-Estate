@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Columns2, X } from "lucide-react";
 
 import OverBudgetBadge from "@/components/over-budget-badge";
+import ProximityNote from "@/components/proximity-note";
 import { type Listing, formatPkr, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
@@ -76,6 +77,7 @@ export default function ListingRow({
         <p className="mt-0.5 text-[0.8125rem] text-ink-soft">
           {listing.bedrooms} bed · {listing.bathrooms ?? "—"} bath · {listing.marla} marla
         </p>
+        <ProximityNote listing={listing} className="mt-1" />
 
         {/* Above the card-wide link overlay so these stay clickable. */}
         <div className="relative z-10 mt-2.5 flex flex-wrap items-center gap-1">

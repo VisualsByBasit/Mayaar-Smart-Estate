@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import OverBudgetBadge from "@/components/over-budget-badge";
+import ProximityNote from "@/components/proximity-note";
 import Reveal from "@/components/reveal";
 import ScoreBar from "@/components/score-bar";
 import { buildBreakdown, computedFit, factCheck } from "@/lib/match-breakdown";
@@ -107,6 +108,7 @@ export default function ListingDetail({ listing }: { listing: Listing }) {
               <OverBudgetBadge price={listing.price_pkr} />
             </p>
             <p className="mt-1 text-[0.875rem] text-ink-soft">{listing.location_note}</p>
+            <ProximityNote listing={match ?? listing} className="mt-2 text-[0.8125rem]" />
           </Reveal>
 
           {/* -------------------------------------------------- the numbers */}

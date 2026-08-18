@@ -16,6 +16,15 @@ export interface Needs {
   priorities: string[];
   family_size: number | null;
   soft_signal: string | null;
+  /**
+   * A named place the buyer anchored the search to ("near Faisal Mosque"),
+   * resolved to real coordinates during extraction. Null whenever no landmark
+   * was mentioned or the model wasn't sure where it is — matching then falls
+   * back to sector names alone.
+   */
+  landmark_name: string | null;
+  landmark_lat: number | null;
+  landmark_lng: number | null;
 }
 
 export const EMPTY_NEEDS: Needs = {
@@ -28,6 +37,9 @@ export const EMPTY_NEEDS: Needs = {
   priorities: [],
   family_size: null,
   soft_signal: null,
+  landmark_name: null,
+  landmark_lat: null,
+  landmark_lng: null,
 };
 
 /** Tolerates missing/odd fields from the model without throwing. */
@@ -40,6 +52,9 @@ export function normalizeNeeds(raw: unknown): Needs {
       ? value.filter((item): item is string => typeof item === "string")
       : [];
 
+  const text = (value: unknown) =>
+    typeof value === "string" && value.trim() ? value.trim() : null;
+
   return {
     budget_min_pkr: num(source.budget_min_pkr),
     budget_max_pkr: num(source.budget_max_pkr),
@@ -49,11 +64,17 @@ export function normalizeNeeds(raw: unknown): Needs {
     marla_min: num(source.marla_min),
     priorities: strings(source.priorities).slice(0, 6),
     family_size: num(source.family_size),
-    soft_signal:
-      typeof source.soft_signal === "string" && source.soft_signal.trim()
-        ? source.soft_signal.trim()
-        : null,
+    soft_signal: text(source.soft_signal),
+    landmark_name: text(source.landmark_name),
+    // A landmark is only usable as a pair, and only inside plausible bounds —
+    // a stray 0/0 would otherwise put every home in Islamabad 7,000 km away.
+    landmark_lat: inRange(num(source.landmark_lat), 23, 38),
+    landmark_lng: inRange(num(source.landmark_lng), 60, 78),
   };
+}
+
+function inRange(value: number | null, min: number, max: number): number | null {
+  return value !== null && value >= min && value <= max ? value : null;
 }
 
 /* ------------------------------------------------------------------ chips */

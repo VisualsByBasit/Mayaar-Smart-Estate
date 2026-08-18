@@ -28,6 +28,15 @@ export interface Match extends Listing {
   match_percent: number;
   why_it_fits: string;
   not_perfect: string;
+  /**
+   * Distance to the landmark the buyer anchored to, measured in code from
+   * coordinates. `landmark_minutes` is that distance over an average city
+   * speed — an estimate, never a routed time, and never shown without saying so.
+   * All three are null when no landmark was resolved.
+   */
+  landmark_name?: string | null;
+  landmark_km?: number | null;
+  landmark_minutes?: number | null;
 }
 
 /**

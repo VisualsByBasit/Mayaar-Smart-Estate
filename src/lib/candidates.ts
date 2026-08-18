@@ -1,3 +1,11 @@
+import {
+  LANDMARK_OUTER_KM,
+  NEAR_LANDMARK_KM,
+  type LandmarkPoint,
+  type Proximity,
+  landmarkFromNeeds,
+  proximity,
+} from "@/lib/landmark";
 import { type Listing, LISTINGS, formatPkrShort, sectorFamily } from "@/lib/listings";
 import { buildBreakdown, computedFit, factCheck } from "@/lib/match-breakdown";
 import type { Needs } from "@/lib/needs";
@@ -9,6 +17,12 @@ import type { Needs } from "@/lib/needs";
  * times over the ceiling; narrowing here first and handing over ~24 pre-checked
  * candidates leaves the model doing what it is actually good at — weighing
  * trade-offs and writing the reasoning.
+ *
+ * Distance from a named landmark now runs through the same split. Asked which
+ * sectors sit near Faisal Mosque, the model offered Bahria Enclave — about 50
+ * minutes away — while F-6 and F-7 sit a couple of kilometres from it. So
+ * extraction resolves the landmark to coordinates and the comparison happens
+ * here, in haversine, against every listing's own lat/lng.
  */
 
 export interface Candidate {
@@ -20,6 +34,8 @@ export interface Candidate {
   gaps: string[];
   /** Priorities the dataset can't settle either way — never assert these. */
   unknown: string[];
+  /** Straight-line km and estimated drive minutes to the brief's landmark. */
+  near: Proximity | null;
 }
 
 export interface CandidateSet {
@@ -37,6 +53,8 @@ interface Relaxation {
   bedrooms: boolean;
   bathrooms: boolean;
   marla: boolean;
+  /** Hard distance ceiling from the landmark; null drops the constraint. */
+  landmarkKm: number | null;
 }
 
 const STRICT: Relaxation = {
@@ -45,6 +63,7 @@ const STRICT: Relaxation = {
   bedrooms: true,
   bathrooms: true,
   marla: true,
+  landmarkKm: NEAR_LANDMARK_KM,
 };
 
 /**
@@ -83,9 +102,51 @@ const LADDER: Array<{ relax: Partial<Relaxation>; note: (needs: Needs) => string
         ? `Too little clears ${formatPkrShort(needs.budget_max_pkr)}, so homes up to 10% over are included and flagged.`
         : null,
   },
+  // The landmark radius is the last thing to give, and when it goes the note
+  // has to say so — "near your office" stops being true past this point.
+  {
+    relax: {
+      sector: false,
+      marla: false,
+      bathrooms: false,
+      bedrooms: false,
+      budgetTolerance: 0.1,
+      landmarkKm: LANDMARK_OUTER_KM,
+    },
+    note: (needs) =>
+      needs.landmark_lat
+        ? `Too little sits within ${NEAR_LANDMARK_KM} km of ${landmarkLabel(needs)}, so the search widened to ${LANDMARK_OUTER_KM} km — say so rather than calling these homes close by.`
+        : null,
+  },
+  {
+    relax: {
+      sector: false,
+      marla: false,
+      bathrooms: false,
+      bedrooms: false,
+      budgetTolerance: 0.1,
+      landmarkKm: null,
+    },
+    note: (needs) =>
+      needs.landmark_lat
+        ? `Nothing within ${LANDMARK_OUTER_KM} km of ${landmarkLabel(needs)} clears the rest of the brief, so distance was set aside entirely — every home below is a real commute away and the figures given say how far.`
+        : null,
+  },
 ];
 
-function passes(listing: Listing, needs: Needs, rules: Relaxation): boolean {
+function landmarkLabel(needs: Needs): string {
+  return needs.landmark_name ?? "the place they named";
+}
+
+function passes(
+  listing: Listing,
+  needs: Needs,
+  rules: Relaxation,
+  point: LandmarkPoint | null,
+): boolean {
+  if (point && rules.landmarkKm !== null) {
+    if (proximity(point, listing).km > rules.landmarkKm) return false;
+  }
   const { budget_max_pkr: max, budget_min_pkr: min } = needs;
   if (max && listing.price_pkr > max * (1 + rules.budgetTolerance)) return false;
   if (min && listing.price_pkr < min * 0.9) return false;
@@ -106,7 +167,7 @@ function passes(listing: Listing, needs: Needs, rules: Relaxation): boolean {
   return true;
 }
 
-function toCandidate(listing: Listing, needs: Needs): Candidate {
+function toCandidate(listing: Listing, needs: Needs, point: LandmarkPoint | null): Candidate {
   const checks = factCheck(needs, listing);
   return {
     listing,
@@ -115,7 +176,25 @@ function toCandidate(listing: Listing, needs: Needs): Candidate {
     fits: checks.fits,
     gaps: checks.gaps,
     unknown: checks.unknown,
+    near: point ? proximity(point, listing) : null,
   };
+}
+
+/**
+ * Distance has to compete with the other dimensions rather than merely gate
+ * them, or a 7.9 km home with a marginally better fit score still leads a 1.5 km
+ * one. Anything inside 3 km reads as genuinely on the doorstep and pays nothing;
+ * past the "near" threshold the cost doubles, so widened searches still rank
+ * the closest homes first.
+ */
+function distancePenalty(km: number): number {
+  if (km <= 3) return 0;
+  if (km <= NEAR_LANDMARK_KM) return (km - 3) * 4;
+  return (NEAR_LANDMARK_KM - 3) * 4 + (km - NEAR_LANDMARK_KM) * 8;
+}
+
+function rankScore(candidate: Candidate): number {
+  return candidate.near ? candidate.fit - distancePenalty(candidate.near.km) : candidate.fit;
 }
 
 /**
@@ -128,11 +207,18 @@ export function selectCandidates(
   target = TARGET,
 ): CandidateSet {
   const notes: string[] = [];
+  const point = landmarkFromNeeds(needs);
   let matched: Listing[] = [];
+
+  if (point) {
+    notes.push(
+      `They anchored this search to ${landmarkLabel(needs)}. Each home carries a straight-line distance and an estimated drive time to it, computed from coordinates — those are the only distance figures to use, and the time is an estimate from distance, never a routed or traffic-aware one.`,
+    );
+  }
 
   for (const step of LADDER) {
     const rules = { ...STRICT, ...step.relax };
-    matched = listings.filter((listing) => passes(listing, needs, rules));
+    matched = listings.filter((listing) => passes(listing, needs, rules, point));
     if (matched.length >= MIN_CANDIDATES) {
       const note = step.note(needs);
       if (note) notes.push(note);
@@ -150,13 +236,13 @@ export function selectCandidates(
   }
 
   const candidates = matched
-    .map((listing) => toCandidate(listing, needs))
-    .sort((a, b) => b.fit - a.fit)
+    .map((listing) => toCandidate(listing, needs, point))
+    .sort((a, b) => rankScore(b) - rankScore(a))
     .slice(0, target);
 
   // When the areas they named are simply out of reach, one in-sector home is
   // worth showing so the shortlist can say what that address actually costs.
-  const aspirational = pickAspirational(needs, listings, candidates);
+  const aspirational = pickAspirational(needs, listings, candidates, point);
   if (aspirational) {
     candidates.push(aspirational);
     notes.push(
@@ -173,6 +259,7 @@ function pickAspirational(
   needs: Needs,
   listings: Listing[],
   chosen: Candidate[],
+  point: LandmarkPoint | null,
 ): Candidate | null {
   if (!needs.preferred_sectors.length || !needs.budget_max_pkr) return null;
   if (chosen.some((candidate) => !candidate.overCeiling && inPreferredSector(candidate.listing, needs))) {
@@ -185,7 +272,10 @@ function pickAspirational(
     .sort((a, b) => a.price_pkr - b.price_pkr)[0];
 
   if (!cheapest || chosen.some((candidate) => candidate.listing.id === cheapest.id)) return null;
-  return toCandidate(cheapest, needs);
+  // A stretch on price is worth showing; a stretch on price *and* an hour from
+  // the landmark they anchored to is just noise.
+  if (point && proximity(point, cheapest).km > LANDMARK_OUTER_KM) return null;
+  return toCandidate(cheapest, needs, point);
 }
 
 function inPreferredSector(listing: Listing, needs: Needs): boolean {

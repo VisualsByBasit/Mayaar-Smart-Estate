@@ -19,6 +19,9 @@ const RESPONSE_SCHEMA = {
         priorities: { type: "ARRAY", items: { type: "STRING" } },
         family_size: { type: "NUMBER", nullable: true },
         soft_signal: { type: "STRING", nullable: true },
+        landmark_name: { type: "STRING", nullable: true },
+        landmark_lat: { type: "NUMBER", nullable: true },
+        landmark_lng: { type: "NUMBER", nullable: true },
       },
       required: [
         "budget_min_pkr",
@@ -30,6 +33,9 @@ const RESPONSE_SCHEMA = {
         "priorities",
         "family_size",
         "soft_signal",
+        "landmark_name",
+        "landmark_lat",
+        "landmark_lng",
       ],
     },
     acknowledgment: { type: "STRING" },
@@ -53,6 +59,7 @@ UPDATING
 - Relative language moves the number: "a bit more space", "slightly cheaper", "one more bedroom". Pick a sensible step and apply it rather than leaving the field alone.
 - Priorities are short phrases in their words. Drop one when they say it matters less; add one when they raise something new. Keep the list under six.
 - soft_signal is for what they implied but didn't say outright. Update it when the new message reveals something; otherwise leave it.
+- landmark_name / landmark_lat / landmark_lng anchor the search to a named place in Islamabad. Carry them through untouched unless the message names a different place or drops the one they had. If it names a new place, set the name and its real approximate coordinates from your own knowledge of the city — around five decimal places, e.g. Faisal Mosque is roughly 33.72972, 73.03722. Set all three to null if you don't know where the new place is; a null is handled correctly downstream and a wrong coordinate is not.
 
 THE ACKNOWLEDGMENT — one or two sentences, spoken to them
 - Say what moved, with the actual numbers: "Ceiling up from 6 to 7 crore — that puts DHA Phase 2 back in play" beats "Got it, I've updated your budget".

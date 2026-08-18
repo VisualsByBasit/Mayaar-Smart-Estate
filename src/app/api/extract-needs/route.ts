@@ -19,6 +19,9 @@ const RESPONSE_SCHEMA = {
     priorities: { type: "ARRAY", items: { type: "STRING" } },
     family_size: { type: "NUMBER", nullable: true },
     soft_signal: { type: "STRING", nullable: true },
+    landmark_name: { type: "STRING", nullable: true },
+    landmark_lat: { type: "NUMBER", nullable: true },
+    landmark_lng: { type: "NUMBER", nullable: true },
   },
   required: [
     "budget_min_pkr",
@@ -30,6 +33,9 @@ const RESPONSE_SCHEMA = {
     "priorities",
     "family_size",
     "soft_signal",
+    "landmark_name",
+    "landmark_lat",
+    "landmark_lng",
   ],
 } as const;
 
@@ -50,8 +56,20 @@ Extract into this exact JSON shape. Use null for any field the user didn't menti
   "marla_min": <number or null>,
   "priorities": [<array of short strings capturing what matters to them, e.g. "security", "quiet", "corner plot", "near schools" — infer softly from tone/context, max 5>],
   "family_size": <number or null, if mentioned or clearly implied>,
-  "soft_signal": "<one short sentence noting anything implied but not explicitly stated, e.g. 'mentioned hosting guests often, may want larger living areas' — or null if nothing to note>"
+  "soft_signal": "<one short sentence noting anything implied but not explicitly stated, e.g. 'mentioned hosting guests often, may want larger living areas' — or null if nothing to note>",
+  "landmark_name": "<the named place they want to be near, in their words — or null>",
+  "landmark_lat": <number or null>,
+  "landmark_lng": <number or null>
 }
+
+THE LANDMARK FIELDS
+If the description mentions any specific named place in Islamabad — a mosque, an office or office tower, a hospital, a university, a school, a market, a park, a monument, a government building, a company's premises, anything a person would give as an address — put that place's name in landmark_name and its real approximate coordinates in landmark_lat and landmark_lng. Use your own general knowledge of Islamabad's geography to locate it; you are not being given a lookup table, and there is no fixed list of places you are allowed to recognise.
+
+One calibration example, purely to show the precision and format expected: Faisal Mosque sits at approximately latitude 33.72972, longitude 73.03722. That is a demonstration of the shape of a good answer, not the only landmark you should be able to place. Islamabad Stock Exchange, PIMS, Shifa International Hospital, Quaid-e-Azam University, NUST, Centaurus Mall, Aabpara Market, Pakistan Monument, Serena Hotel, Blue Area offices, F-9 Park and any other well known place in the city should be located the same way, from what you already know.
+
+Latitude and longitude are real decimal degrees, roughly 33.4–33.8 and 72.8–73.3 for Islamabad. Give around five decimal places.
+Set all three landmark fields to null when no specific place is mentioned, or when you genuinely do not know where the mentioned place is. Never guess a coordinate you are unsure of, and never substitute a nearby place you do know for one you don't — a null here is handled correctly downstream, a wrong coordinate is not.
+A sector name on its own ("F-11", "DHA Phase 2") is not a landmark; it belongs in preferred_sectors and leaves the landmark fields null.
 
 Convert any "crore"/"lakh" mentions to raw PKR numbers (1 crore = 10000000, 1 lakh = 100000).
 family_size is how many people will live in the house. Never copy it into bedrooms_min — a family of six may well have asked for four bedrooms, and inventing a sixth would rule out homes that suit them.

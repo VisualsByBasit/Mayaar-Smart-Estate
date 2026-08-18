@@ -3,35 +3,62 @@ import { matchListings, MatchListingsError } from "@/lib/match-listings";
 
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
-function buildPrompt(currentNeeds: unknown, message: string): string {
-  return `You are updating a user's housing preferences based on a follow-up message during a conversation. You already have their current preferences. Update ONLY what the new message implies should change — keep everything else exactly as it was.
+/** Mirrors the shape below so the model can't drop `acknowledgment` mid-flow. */
+const RESPONSE_SCHEMA = {
+  type: "OBJECT",
+  properties: {
+    updated_needs: {
+      type: "OBJECT",
+      properties: {
+        budget_min_pkr: { type: "NUMBER", nullable: true },
+        budget_max_pkr: { type: "NUMBER", nullable: true },
+        preferred_sectors: { type: "ARRAY", items: { type: "STRING" } },
+        bedrooms_min: { type: "NUMBER", nullable: true },
+        bathrooms_min: { type: "NUMBER", nullable: true },
+        marla_min: { type: "NUMBER", nullable: true },
+        priorities: { type: "ARRAY", items: { type: "STRING" } },
+        family_size: { type: "NUMBER", nullable: true },
+        soft_signal: { type: "STRING", nullable: true },
+      },
+      required: [
+        "budget_min_pkr",
+        "budget_max_pkr",
+        "preferred_sectors",
+        "bedrooms_min",
+        "bathrooms_min",
+        "marla_min",
+        "priorities",
+        "family_size",
+        "soft_signal",
+      ],
+    },
+    acknowledgment: { type: "STRING" },
+  },
+  required: ["updated_needs", "acknowledgment"],
+  propertyOrdering: ["updated_needs", "acknowledgment"],
+} as const;
 
-Current preferences:
+function buildPrompt(currentNeeds: unknown, message: string): string {
+  return `You are Mayaar, an Islamabad property advisor mid-conversation with a buyer. You already hold their preferences. Their new message adjusts the brief — update ONLY what it implies and leave everything else exactly as it was.
+
+Their preferences right now:
 ${JSON.stringify(currentNeeds, null, 2)}
 
-User's new message:
+Their new message:
 "${message}"
 
-Return the FULL updated preferences object (not just the changed fields) in this exact shape:
-{
-  "budget_min_pkr": <number or null>,
-  "budget_max_pkr": <number or null>,
-  "preferred_sectors": [<array of strings>],
-  "bedrooms_min": <number or null>,
-  "bathrooms_min": <number or null>,
-  "marla_min": <number or null>,
-  "priorities": [<array of short strings, max 5>],
-  "family_size": <number or null>,
-  "soft_signal": "<string or null>"
-}
+UPDATING
+- Move only the fields the message actually touches. Unmentioned fields keep their current values verbatim — do not re-derive or "tidy" them.
+- Convert money to raw PKR: 1 crore = 10,000,000, 1 lakh = 100,000. "Push it up by a crore" on a 60,000,000 ceiling means 70,000,000.
+- Relative language moves the number: "a bit more space", "slightly cheaper", "one more bedroom". Pick a sensible step and apply it rather than leaving the field alone.
+- Priorities are short phrases in their words. Drop one when they say it matters less; add one when they raise something new. Keep the list under six.
+- soft_signal is for what they implied but didn't say outright. Update it when the new message reveals something; otherwise leave it.
 
-Also include a short, natural one-sentence acknowledgment of what changed, e.g. "Got it, I'll reduce the importance of location and prioritize larger homes." If nothing meaningfully changed, say so honestly.
-
-Respond ONLY with valid JSON, no markdown formatting, in this exact shape:
-{
-  "updated_needs": { ...the full object above... },
-  "acknowledgment": "<one sentence>"
-}`;
+THE ACKNOWLEDGMENT — one or two sentences, spoken to them
+- Say what moved, with the actual numbers: "Ceiling up from 6 to 7 crore — that puts DHA Phase 2 back in play" beats "Got it, I've updated your budget".
+- If this change works against something else they asked for, say so plainly in the same breath: "More space at this budget means leaving F-11 behind — you can have one or the other here, not both." Naming the trade-off is more useful than agreeing smoothly.
+- If the message changes nothing you can act on, say that honestly instead of inventing a change.
+- Never mention fields, JSON, preferences objects, or that you are a model. Address them as "you".`;
 }
 
 function stripMarkdownFences(text: string): string {
@@ -52,7 +79,13 @@ function parseRetryDelayMs(bodyText: string): number | null {
 
 async function callGemini(prompt: string, apiKey: string): Promise<Response> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-  const body = JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] });
+  const body = JSON.stringify({
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: {
+      responseMimeType: "application/json",
+      responseSchema: RESPONSE_SCHEMA,
+    },
+  });
 
   let res: Response;
   for (let attempt = 0; ; attempt++) {
@@ -178,8 +211,13 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const matches = await matchListings(updatedNeeds, apiKey);
-    return Response.json({ updated_needs: updatedNeeds, acknowledgment, matches });
+    const { matches, recommendation } = await matchListings(updatedNeeds, apiKey);
+    return Response.json({
+      updated_needs: updatedNeeds,
+      acknowledgment,
+      matches,
+      recommendation,
+    });
   } catch (err) {
     if (err instanceof MatchListingsError) {
       console.error("[refine-needs] matchListings failed:", err);

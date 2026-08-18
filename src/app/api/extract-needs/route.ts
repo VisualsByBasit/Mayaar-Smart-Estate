@@ -3,6 +3,36 @@ import { NextRequest } from "next/server";
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const MIN_TEXT_LENGTH = 10;
 
+/**
+ * Every downstream prompt reads these fields, so a dropped key here quietly
+ * degrades the matching reasoning. The schema makes the shape non-negotiable.
+ */
+const RESPONSE_SCHEMA = {
+  type: "OBJECT",
+  properties: {
+    budget_min_pkr: { type: "NUMBER", nullable: true },
+    budget_max_pkr: { type: "NUMBER", nullable: true },
+    preferred_sectors: { type: "ARRAY", items: { type: "STRING" } },
+    bedrooms_min: { type: "NUMBER", nullable: true },
+    bathrooms_min: { type: "NUMBER", nullable: true },
+    marla_min: { type: "NUMBER", nullable: true },
+    priorities: { type: "ARRAY", items: { type: "STRING" } },
+    family_size: { type: "NUMBER", nullable: true },
+    soft_signal: { type: "STRING", nullable: true },
+  },
+  required: [
+    "budget_min_pkr",
+    "budget_max_pkr",
+    "preferred_sectors",
+    "bedrooms_min",
+    "bathrooms_min",
+    "marla_min",
+    "priorities",
+    "family_size",
+    "soft_signal",
+  ],
+} as const;
+
 function buildPrompt(userText: string): string {
   return `You are extracting structured housing preferences from a user's free-text description. Be generous about inferring reasonable values, but never invent specifics the user didn't imply.
 
@@ -24,6 +54,7 @@ Extract into this exact JSON shape. Use null for any field the user didn't menti
 }
 
 Convert any "crore"/"lakh" mentions to raw PKR numbers (1 crore = 10000000, 1 lakh = 100000).
+family_size is how many people will live in the house. Never copy it into bedrooms_min — a family of six may well have asked for four bedrooms, and inventing a sixth would rule out homes that suit them.
 Respond ONLY with valid JSON, no markdown formatting, no explanation.`;
 }
 
@@ -45,7 +76,13 @@ function parseRetryDelayMs(bodyText: string): number | null {
 
 async function callGemini(prompt: string, apiKey: string): Promise<Response> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-  const body = JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] });
+  const body = JSON.stringify({
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: {
+      responseMimeType: "application/json",
+      responseSchema: RESPONSE_SCHEMA,
+    },
+  });
 
   let res: Response;
   for (let attempt = 0; ; attempt++) {

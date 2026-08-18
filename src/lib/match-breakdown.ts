@@ -31,11 +31,32 @@ const PRIORITY_SIGNALS: Array<{ test: RegExp; amenities: string[] }> = [
 ];
 
 /**
+ * Priorities an amenity actively rules out. Without this, "single storey" hits
+ * the generic storey signal below and a home listing "Double storey" comes back
+ * as satisfying it — the buyer who asked because stairs are a problem then gets
+ * told the stairs are a feature.
+ */
+const PRIORITY_CONFLICTS: Array<{ test: RegExp; amenities: string[] }> = [
+  {
+    test: /(single|one).?(storey|story|level)|ground.?floor|no stairs|without stairs/i,
+    amenities: ["Double storey"],
+  },
+];
+
+/**
  * true / false when the dataset can answer it, null when it simply doesn't
  * record anything about that priority — we never guess in that case.
  */
 export function checkPriority(priority: string, listing: Listing): boolean | null {
   const amenities = listing.amenities ?? [];
+
+  const conflict = PRIORITY_CONFLICTS.find((entry) => entry.test.test(priority));
+  if (conflict) {
+    // A contradicting amenity settles it; its absence doesn't prove the
+    // opposite, since nothing in the data records storey count positively.
+    return conflict.amenities.some((amenity) => amenities.includes(amenity)) ? false : null;
+  }
+
   const signal = PRIORITY_SIGNALS.find((entry) => entry.test.test(priority));
   if (signal) {
     return signal.amenities.some((amenity) => amenities.includes(amenity));
@@ -231,4 +252,62 @@ export function computedFit(dimensions: Dimension[]): number | null {
   if (!dimensions.length) return null;
   const total = dimensions.reduce((sum, dimension) => sum + dimension.score, 0);
   return Math.round(total / dimensions.length);
+}
+
+/* -------------------------------------------------------------- comparison */
+
+export interface ComparisonRow {
+  key: string;
+  label: string;
+  /** One cell per compared home, aligned by index; null where not scored. */
+  cells: Array<Dimension | null>;
+  /** Every cell sharing the top score — more than one means they tie. */
+  bestIndexes: number[];
+  /** True when nothing separates the homes here, so a win isn't implied. */
+  allTied: boolean;
+}
+
+/**
+ * buildBreakdown skips dimensions a listing can't answer (an unpublished
+ * bathroom count, say), so comparing two homes row-by-row needs the union of
+ * their dimensions with gaps left explicit rather than silently shifting rows.
+ */
+export function buildComparison(needs: Needs, listings: Listing[]): ComparisonRow[] {
+  const perListing = listings.map((listing) => buildBreakdown(needs, listing));
+
+  const order: string[] = [];
+  const labels = new Map<string, string>();
+  for (const dimensions of perListing) {
+    for (const dimension of dimensions) {
+      if (!labels.has(dimension.key)) {
+        labels.set(dimension.key, dimension.label);
+        order.push(dimension.key);
+      }
+    }
+  }
+
+  return order.map((key) => {
+    const cells = perListing.map(
+      (dimensions) => dimensions.find((dimension) => dimension.key === key) ?? null,
+    );
+
+    // Most rows tie at 100 once every home clears a requirement. Marking each
+    // joint-best cell keeps the row readable — "all three clear this" — instead
+    // of leaving it blank and looking unscored.
+    const scored = cells
+      .map((cell, index) => ({ cell, index }))
+      .filter((entry): entry is { cell: Dimension; index: number } => Boolean(entry.cell));
+    const best = Math.max(...scored.map((entry) => entry.cell.score), -1);
+    const bestIndexes = scored
+      .filter((entry) => entry.cell.score === best)
+      .map((entry) => entry.index);
+
+    return {
+      key,
+      label: labels.get(key)!,
+      cells,
+      bestIndexes,
+      allTied: bestIndexes.length === scored.length && scored.length > 1,
+    };
+  });
 }

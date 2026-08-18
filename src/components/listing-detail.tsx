@@ -2,9 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Bookmark, Check, ExternalLink, HelpCircle, Minus } from "lucide-react";
+import {
+  ArrowLeft,
+  BarChart3,
+  Bookmark,
+  Check,
+  Columns2,
+  ExternalLink,
+  HelpCircle,
+  Minus,
+} from "lucide-react";
 
 import Reveal from "@/components/reveal";
+import ScoreBar from "@/components/score-bar";
 import { buildBreakdown, computedFit, factCheck } from "@/lib/match-breakdown";
 import { type Listing, formatPkr, listingGallery, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
@@ -20,11 +30,14 @@ const SPEC_LABELS: Array<[keyof Listing | "price", string]> = [
 ];
 
 export default function ListingDetail({ listing }: { listing: Listing }) {
-  const { needs, matches, saved, toggleSaved } = useSession();
+  const { needs, matches, saved, compare, toggleSaved, toggleCompare } = useSession();
   const match = matches.find((entry) => entry.id === listing.id);
   const photo = listingPhoto(listing, 1400);
-  const gallery = listingGallery(listing);
+  // The grid below is 2fr + a stacked 1fr column: exactly two slots beside the
+  // hero. Asking for three wrapped the extra frame onto a new row.
+  const gallery = listingGallery(listing, 2);
   const isSaved = saved.includes(listing.id);
+  const isComparing = compare.includes(listing.id);
 
   const breakdown = needs ? buildBreakdown(needs, listing) : [];
   const checks = needs ? factCheck(needs, listing) : null;
@@ -72,7 +85,7 @@ export default function ListingDetail({ listing }: { listing: Listing }) {
         ))}
       </Reveal>
 
-      <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+      <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
         <div>
           {/* ------------------------------------------------------- header */}
           <Reveal>
@@ -107,28 +120,29 @@ export default function ListingDetail({ listing }: { listing: Listing }) {
               <ul className="mt-6 space-y-5">
                 {breakdown.map((dimension, index) => (
                   <li key={dimension.key}>
-                    <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-[0.875rem] font-medium">{dimension.label}</span>
-                      <span className="font-mono text-xs text-ink-soft">{dimension.score}</span>
-                    </div>
-                    <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-sand-deep">
-                      <span
-                        className="animate-bar block h-full origin-left rounded-full bg-forest"
-                        style={{
-                          width: `${dimension.score}%`,
-                          animationDelay: `${index * 90}ms`,
-                        }}
-                      />
-                    </span>
-                    <p className="mt-1.5 text-[0.8125rem] text-ink-soft">{dimension.note}</p>
+                    <ScoreBar
+                      label={dimension.label}
+                      score={dimension.score}
+                      note={dimension.note}
+                      delay={index * 90}
+                    />
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-6 text-[0.75rem] leading-relaxed text-ink-soft">
-                Every bar above is computed from this listing&apos;s own fields and
-                the preferences you gave — no model output is involved.
-              </p>
+              <div className="mt-6 flex flex-wrap items-baseline justify-between gap-3">
+                <p className="max-w-md text-[0.75rem] leading-relaxed text-ink-soft">
+                  Every bar above is computed from this listing&apos;s own fields and
+                  the preferences you gave — no model output is involved.
+                </p>
+                <Link
+                  href={`/breakdown/${listing.id}`}
+                  className="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-forest hover:underline"
+                >
+                  <BarChart3 className="size-3.5" />
+                  Full breakdown
+                </Link>
+              </div>
             </Reveal>
           ) : (
             <Reveal delay={80} className="mt-12 rounded-2xl border border-rule bg-paper p-6">
@@ -215,20 +229,36 @@ export default function ListingDetail({ listing }: { listing: Listing }) {
             )}
 
             <div className="mt-6 flex flex-col gap-2">
-              <button
-                type="button"
-                onClick={() => toggleSaved(listing.id)}
-                aria-pressed={isSaved}
-                className={cn(
-                  "inline-flex h-10 items-center justify-center gap-2 rounded-md text-[0.8125rem] font-medium transition-colors",
-                  isSaved
-                    ? "bg-forest/10 text-forest"
-                    : "border border-rule text-ink-soft hover:text-forest",
-                )}
-              >
-                <Bookmark className={cn("size-3.5", isSaved && "fill-current")} />
-                {isSaved ? "Saved" : "Save this home"}
-              </button>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => toggleSaved(listing.id)}
+                  aria-pressed={isSaved}
+                  className={cn(
+                    "inline-flex h-10 items-center justify-center gap-2 rounded-md text-[0.8125rem] font-medium transition-colors",
+                    isSaved
+                      ? "bg-forest/10 text-forest"
+                      : "border border-rule text-ink-soft hover:text-forest",
+                  )}
+                >
+                  <Bookmark className={cn("size-3.5", isSaved && "fill-current")} />
+                  {isSaved ? "Saved" : "Save"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => toggleCompare(listing.id)}
+                  aria-pressed={isComparing}
+                  className={cn(
+                    "inline-flex h-10 items-center justify-center gap-2 rounded-md text-[0.8125rem] font-medium transition-colors",
+                    isComparing
+                      ? "bg-forest/10 text-forest"
+                      : "border border-rule text-ink-soft hover:text-forest",
+                  )}
+                >
+                  <Columns2 className="size-3.5" />
+                  {isComparing ? "Comparing" : "Compare"}
+                </button>
+              </div>
               <a
                 href={listing.source_url}
                 target="_blank"

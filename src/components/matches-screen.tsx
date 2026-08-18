@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { Loader2, Map as MapIcon, RotateCcw } from "lucide-react";
+import { Columns2, List, Loader2, Map as MapIcon, RotateCcw } from "lucide-react";
 
 import MatchCard from "@/components/match-card";
 import PropertyMap from "@/components/property-map";
+import RecommendationCard from "@/components/recommendation-card";
 import RefinePanel from "@/components/refine-panel";
 import Reveal from "@/components/reveal";
 import SearchFunnel from "@/components/search-funnel";
-import { LISTINGS } from "@/lib/listings";
+import { formatPkrShort } from "@/lib/listings";
 import { EMPTY_NEEDS, needChips } from "@/lib/needs";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
@@ -20,12 +21,25 @@ const STATUS_COPY = {
   matching: "Ranking every listing against it…",
 } as const;
 
+type View = "list" | "map";
+
 export default function MatchesScreen() {
   const router = useRouter();
-  const { description, needs, matches, status, error, refining, hydrated, runSearch, reset } =
-    useSession();
+  const {
+    description,
+    needs,
+    matches,
+    recommendation,
+    compare,
+    status,
+    error,
+    refining,
+    hydrated,
+    runSearch,
+    reset,
+  } = useSession();
   const [activeId, setActiveId] = useState<number | null>(null);
-  const [showMap, setShowMap] = useState(false);
+  const [view, setView] = useState<View>("list");
 
   // A direct hit on /matches with nothing in the session has nothing to show.
   useEffect(() => {
@@ -72,6 +86,9 @@ export default function MatchesScreen() {
 
   const loading = status === "extracting" || status === "matching";
   const chips = needs ? needChips(needs) : [];
+  const recommended = recommendation
+    ? matches.find((match) => match.id === recommendation.id)
+    : undefined;
 
   return (
     <div className="shell py-10 md:py-14">
@@ -112,33 +129,48 @@ export default function MatchesScreen() {
         )}
       </Reveal>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+      {/* --------------------------------------------------- the one answer */}
+      {!loading && recommendation && recommended && (
+        <Reveal delay={60} className="mt-10">
+          <RecommendationCard recommendation={recommendation} match={recommended} />
+        </Reveal>
+      )}
+
+      <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
         {/* ------------------------------------------------------- shortlist */}
         <div>
           <div className="flex items-center justify-between gap-4 border-b border-rule pb-3">
             <h1 className="font-heading text-[1.125rem] font-medium">
               {loading ? "Working…" : `Your ${matches.length} best matches`}
             </h1>
-            <button
-              type="button"
-              onClick={() => setShowMap((value) => !value)}
-              className="inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-ink-soft transition-colors hover:text-forest"
-            >
-              <MapIcon className="size-3.5" />
-              {showMap ? "Hide map" : "Show map"}
-            </button>
-          </div>
 
-          {showMap && (
-            <div className="relative mt-4 h-[24rem] overflow-hidden rounded-2xl border border-rule">
-              <PropertyMap
-                matches={matches}
-                context={LISTINGS}
-                activeId={activeId}
-                onSelect={handleActivate}
-              />
-            </div>
-          )}
+            {!loading && matches.length > 0 && (
+              <div className="flex rounded-md border border-rule p-0.5">
+                {(
+                  [
+                    { key: "list", label: "List", icon: List },
+                    { key: "map", label: "Map", icon: MapIcon },
+                  ] as const
+                ).map(({ key, label, icon: Icon }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setView(key)}
+                    aria-pressed={view === key}
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-[0.3125rem] px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
+                      view === key
+                        ? "bg-forest text-primary-foreground"
+                        : "text-ink-soft hover:text-forest",
+                    )}
+                  >
+                    <Icon className="size-3" />
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {loading ? (
             <div className="mt-6 space-y-3">
@@ -157,26 +189,76 @@ export default function MatchesScreen() {
           ) : (
             <div
               className={cn(
-                "mt-4 space-y-3 transition-opacity",
+                "transition-opacity",
                 refining && "pointer-events-none opacity-50",
               )}
               onMouseLeave={() => setActiveId(null)}
             >
-              {matches.map((match, index) => (
-                <Reveal key={match.id} delay={index * 70}>
-                  <MatchCard
-                    match={match}
-                    active={activeId === match.id}
-                    onActivate={handleActivate}
-                  />
-                </Reveal>
-              ))}
+              {view === "map" ? (
+                <div className="mt-4">
+                  {/* Only the ranked shortlist goes on the map — dropping the
+                      other 141 homes in as context turned the view into a
+                      dataset browser rather than these five in the city. */}
+                  <div className="relative h-[26rem] overflow-hidden rounded-2xl border border-rule sm:h-[30rem]">
+                    <PropertyMap
+                      matches={matches}
+                      activeId={activeId}
+                      onSelect={handleActivate}
+                    />
+                  </div>
 
-              {matches.length === 0 && (
-                <p className="py-16 text-center text-[0.875rem] text-ink-soft">
-                  No homes came back for that. Try loosening the budget or adding
-                  another area.
-                </p>
+                  <ol className="mt-4 space-y-1.5">
+                    {matches.map((match) => (
+                      <li key={match.id}>
+                        <Link
+                          href={`/listing/${match.id}`}
+                          onMouseEnter={() => setActiveId(match.id)}
+                          onFocus={() => setActiveId(match.id)}
+                          className={cn(
+                            "flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-colors",
+                            activeId === match.id
+                              ? "border-forest/40 bg-paper"
+                              : "border-rule bg-paper/60 hover:border-forest/30",
+                          )}
+                        >
+                          <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-forest text-[0.6875rem] font-semibold text-primary-foreground">
+                            {match.rank}
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-[0.8125rem] font-medium">
+                              {match.title}
+                            </span>
+                            <span className="block truncate text-[0.75rem] text-ink-soft">
+                              {match.sector}
+                            </span>
+                          </span>
+                          <span className="shrink-0 text-right text-[0.8125rem] font-medium">
+                            {formatPkrShort(match.price_pkr)}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ) : (
+                <div className="mt-4 space-y-3">
+                  {matches.map((match, index) => (
+                    <Reveal key={match.id} delay={index * 70}>
+                      <MatchCard
+                        match={match}
+                        active={activeId === match.id}
+                        onActivate={handleActivate}
+                      />
+                    </Reveal>
+                  ))}
+
+                  {matches.length === 0 && (
+                    <p className="py-16 text-center text-[0.875rem] text-ink-soft">
+                      No homes came back for that. Try loosening the budget or adding
+                      another area.
+                    </p>
+                  )}
+                </div>
               )}
             </div>
           )}
@@ -189,6 +271,30 @@ export default function MatchesScreen() {
             shortlistCount={matches.length || 5}
             pending={loading}
           />
+
+          {compare.length > 0 && (
+            <div className="rounded-2xl border border-rule bg-paper p-4">
+              <span className="eyebrow">Comparing</span>
+              <p className="mt-2 text-[0.8125rem] leading-relaxed text-ink-soft">
+                {compare.length === 1
+                  ? "One home picked. Add another to see them side by side."
+                  : `${compare.length} homes picked.`}
+              </p>
+              <Link
+                href="/compare"
+                className={cn(
+                  "mt-3 inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md text-[0.8125rem] font-medium transition-colors",
+                  compare.length >= 2
+                    ? "bg-forest text-primary-foreground hover:bg-forest-deep"
+                    : "border border-rule text-ink-soft hover:text-forest",
+                )}
+              >
+                <Columns2 className="size-3.5" />
+                Open compare
+              </Link>
+            </div>
+          )}
+
           {!loading && needs && <RefinePanel />}
         </aside>
       </div>

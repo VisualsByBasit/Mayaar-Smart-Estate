@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Bookmark, Columns2 } from "lucide-react";
+import { BarChart3, Bookmark, Columns2 } from "lucide-react";
 
 import { type Match, formatPkr, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
@@ -121,9 +121,10 @@ export default function MatchCard({
           {isComparing ? "Comparing" : "Compare"}
         </button>
         <Link
-          href={`/listing/${match.id}`}
-          className="relative ml-auto rounded-md px-2.5 py-1.5 text-xs font-medium text-forest hover:underline"
+          href={`/breakdown/${match.id}`}
+          className="relative ml-auto inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium text-forest hover:underline"
         >
+          <BarChart3 className="size-3.5" />
           See the reasoning
         </Link>
       </div>

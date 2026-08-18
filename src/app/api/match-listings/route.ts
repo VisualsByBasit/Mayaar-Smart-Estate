@@ -34,8 +34,8 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const matches = await matchListings(needs, apiKey);
-    return Response.json({ matches });
+    const { matches, recommendation } = await matchListings(needs, apiKey);
+    return Response.json({ matches, recommendation });
   } catch (err) {
     if (err instanceof MatchListingsError) {
       return Response.json({ error: err.message }, { status: err.status });

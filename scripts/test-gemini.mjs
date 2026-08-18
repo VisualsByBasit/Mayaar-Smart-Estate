@@ -63,6 +63,6 @@ try {
   const parsed = JSON.parse(cleaned);
   console.log("\n--- Parsed matches ---");
   console.log(JSON.stringify(parsed, null, 2));
-} catch (e) {
+} catch {
   console.log("\n(Could not auto-parse as JSON — check formatting above)");
 }

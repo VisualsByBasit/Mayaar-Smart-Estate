@@ -30,6 +30,18 @@ export interface Match extends Listing {
   not_perfect: string;
 }
 
+/**
+ * The one home Mayaar would actually put in front of this buyer, chosen out of
+ * the ranked five. Deliberately separate from the list so it can disagree with
+ * rank 1 and say why.
+ */
+export interface Recommendation {
+  id: number;
+  headline: string;
+  rationale: string;
+  trade_off: string;
+}
+
 export const LISTINGS = listingsData as Listing[];
 export const TOTAL_LISTINGS = LISTINGS.length;
 

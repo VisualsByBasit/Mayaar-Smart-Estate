@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, Columns2, Loader2, Trophy, X } from "lucide-react";
 
 import EmptyState from "@/components/empty-state";
+import OverBudgetBadge from "@/components/over-budget-badge";
 import Reveal from "@/components/reveal";
 import ScoreBar from "@/components/score-bar";
 import { type Listing, formatPkr, getListing, listingPhoto } from "@/lib/listings";
@@ -12,8 +13,17 @@ import { buildComparison, computedFit, buildBreakdown } from "@/lib/match-breakd
 import { COMPARE_LIMIT, useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
 
-const FACT_ROWS: Array<{ label: string; value: (listing: Listing) => string }> = [
-  { label: "Price", value: (listing) => formatPkr(listing.price_pkr) },
+const FACT_ROWS: Array<{
+  label: string;
+  value: (listing: Listing) => string;
+  /** Extra mark beside the value — the budget flag on the price row. */
+  badge?: (listing: Listing) => React.ReactNode;
+}> = [
+  {
+    label: "Price",
+    value: (listing) => formatPkr(listing.price_pkr),
+    badge: (listing) => <OverBudgetBadge price={listing.price_pkr} size="compact" />,
+  },
   { label: "Plot size", value: (listing) => `${listing.marla} marla` },
   { label: "Covered area", value: (listing) => `${listing.sqft.toLocaleString("en-PK")} sq ft` },
   { label: "Bedrooms", value: (listing) => String(listing.bedrooms) },
@@ -188,8 +198,12 @@ export default function CompareScreen() {
               >
                 <span className="text-[0.8125rem] text-ink-soft">{row.label}</span>
                 {listings.map((listing) => (
-                  <span key={listing.id} className="px-3 text-[0.8125rem] font-medium">
+                  <span
+                    key={listing.id}
+                    className="flex flex-wrap items-center gap-1.5 px-3 text-[0.8125rem] font-medium"
+                  >
                     {row.value(listing)}
+                    {row.badge?.(listing)}
                   </span>
                 ))}
               </div>

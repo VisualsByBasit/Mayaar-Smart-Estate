@@ -13,6 +13,7 @@ import {
   Minus,
 } from "lucide-react";
 
+import OverBudgetBadge from "@/components/over-budget-badge";
 import Reveal from "@/components/reveal";
 import ScoreBar from "@/components/score-bar";
 import { buildBreakdown, computedFit, factCheck } from "@/lib/match-breakdown";
@@ -101,7 +102,10 @@ export default function ListingDetail({ listing }: { listing: Listing }) {
             <h1 className="font-heading mt-4 text-[1.875rem] leading-tight font-medium text-balance sm:text-[2.25rem]">
               {listing.title}
             </h1>
-            <p className="mt-3 text-[1.0625rem] font-medium">{formatPkr(listing.price_pkr)}</p>
+            <p className="mt-3 flex flex-wrap items-center gap-2.5 text-[1.0625rem] font-medium">
+              {formatPkr(listing.price_pkr)}
+              <OverBudgetBadge price={listing.price_pkr} />
+            </p>
             <p className="mt-1 text-[0.875rem] text-ink-soft">{listing.location_note}</p>
           </Reveal>
 

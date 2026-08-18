@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BarChart3, Bookmark, Columns2 } from "lucide-react";
 
+import OverBudgetBadge from "@/components/over-budget-badge";
 import { type Match, formatPkr, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
@@ -72,8 +73,9 @@ export default function MatchCard({
             </span>
           </div>
 
-          <p className="mt-2.5 text-[0.875rem] font-medium">
+          <p className="mt-2.5 flex flex-wrap items-center gap-2 text-[0.875rem] font-medium">
             {formatPkr(match.price_pkr)}
+            <OverBudgetBadge price={match.price_pkr} />
           </p>
           <p className="mt-1 text-[0.8125rem] text-ink-soft">
             {match.bedrooms} bed · {match.bathrooms ?? "—"} bath · {match.marla} marla

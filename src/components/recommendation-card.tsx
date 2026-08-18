@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
+import OverBudgetBadge from "@/components/over-budget-badge";
 import { type Match, type Recommendation, formatPkr, listingPhoto } from "@/lib/listings";
 
 /**
@@ -81,8 +82,11 @@ export default function RecommendationCard({
             </span>
           </div>
           <p className="mt-3 truncate text-[0.875rem] font-medium">{match.title}</p>
-          <p className="mt-0.5 text-[0.8125rem] text-primary-foreground/70">
-            {formatPkr(match.price_pkr)} · {match.marla} marla
+          <p className="mt-0.5 flex flex-wrap items-center gap-2 text-[0.8125rem] text-primary-foreground/70">
+            <span>
+              {formatPkr(match.price_pkr)} · {match.marla} marla
+            </span>
+            <OverBudgetBadge price={match.price_pkr} size="compact" onDark />
           </p>
           <p className="mt-0.5 truncate text-[0.8125rem] text-primary-foreground/70">
             {match.society} · {match.sector}

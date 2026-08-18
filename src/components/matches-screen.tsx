@@ -2,17 +2,26 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
-import { Columns2, List, Loader2, Map as MapIcon, RotateCcw } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Columns2, Crosshair, List, Loader2, Map as MapIcon, RotateCcw } from "lucide-react";
 
 import MatchCard from "@/components/match-card";
+import OverBudgetBadge from "@/components/over-budget-badge";
 import PropertyMap from "@/components/property-map";
+import RadiusPanel from "@/components/radius-panel";
 import RecommendationCard from "@/components/recommendation-card";
 import RefinePanel from "@/components/refine-panel";
 import Reveal from "@/components/reveal";
 import SearchFunnel from "@/components/search-funnel";
 import { formatPkrShort } from "@/lib/listings";
 import { EMPTY_NEEDS, needChips } from "@/lib/needs";
+import {
+  RADIUS_DEFAULT_KM,
+  type LatLng,
+  clampRadiusKm,
+  formatKm,
+  listingsWithin,
+} from "@/lib/radius";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +49,42 @@ export default function MatchesScreen() {
   } = useSession();
   const [activeId, setActiveId] = useState<number | null>(null);
   const [view, setView] = useState<View>("list");
+  const [radiusMode, setRadiusMode] = useState(false);
+  const [radiusCenter, setRadiusCenter] = useState<LatLng | null>(null);
+  const [radiusKm, setRadiusKm] = useState(RADIUS_DEFAULT_KM);
+
+  // Everything about area search is derived locally from listings.json — the
+  // haversine distance decides membership, no service is consulted.
+  const radiusHits = useMemo(
+    () => (radiusCenter ? listingsWithin(radiusCenter, radiusKm) : []),
+    [radiusCenter, radiusKm],
+  );
+
+  const rankedIds = useMemo(() => new Set(matches.map((match) => match.id)), [matches]);
+  const rankedInsideRadius = useMemo(
+    () => matches.filter((match) => radiusHits.some((hit) => hit.listing.id === match.id)),
+    [matches, radiusHits],
+  );
+
+  const exitRadiusMode = useCallback(() => {
+    setRadiusMode(false);
+    setRadiusCenter(null);
+    setRadiusKm(RADIUS_DEFAULT_KM);
+  }, []);
+
+  const toggleRadiusMode = useCallback(() => {
+    setRadiusMode((current) => {
+      if (current) {
+        setRadiusCenter(null);
+        setRadiusKm(RADIUS_DEFAULT_KM);
+        return false;
+      }
+      // Dropping a point only makes sense on the map, so entering the mode
+      // brings the map forward rather than leaving the user on the list.
+      setView("map");
+      return true;
+    });
+  }, []);
 
   // A direct hit on /matches with nothing in the session has nothing to show.
   useEffect(() => {
@@ -145,29 +190,46 @@ export default function MatchesScreen() {
             </h1>
 
             {!loading && matches.length > 0 && (
-              <div className="flex rounded-md border border-rule p-0.5">
-                {(
-                  [
-                    { key: "list", label: "List", icon: List },
-                    { key: "map", label: "Map", icon: MapIcon },
-                  ] as const
-                ).map(({ key, label, icon: Icon }) => (
-                  <button
-                    key={key}
-                    type="button"
-                    onClick={() => setView(key)}
-                    aria-pressed={view === key}
-                    className={cn(
-                      "inline-flex items-center gap-1.5 rounded-[0.3125rem] px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
-                      view === key
-                        ? "bg-forest text-primary-foreground"
-                        : "text-ink-soft hover:text-forest",
-                    )}
-                  >
-                    <Icon className="size-3" />
-                    {label}
-                  </button>
-                ))}
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={toggleRadiusMode}
+                  aria-pressed={radiusMode}
+                  className={cn(
+                    "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
+                    radiusMode
+                      ? "border-forest bg-forest text-primary-foreground"
+                      : "border-rule text-ink-soft hover:text-forest",
+                  )}
+                >
+                  <Crosshair className="size-3" />
+                  Search by area
+                </button>
+
+                <div className="flex rounded-md border border-rule p-0.5">
+                  {(
+                    [
+                      { key: "list", label: "List", icon: List },
+                      { key: "map", label: "Map", icon: MapIcon },
+                    ] as const
+                  ).map(({ key, label, icon: Icon }) => (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => setView(key)}
+                      aria-pressed={view === key}
+                      className={cn(
+                        "inline-flex items-center gap-1.5 rounded-[0.3125rem] px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
+                        view === key
+                          ? "bg-forest text-primary-foreground"
+                          : "text-ink-soft hover:text-forest",
+                      )}
+                    >
+                      <Icon className="size-3" />
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -196,49 +258,138 @@ export default function MatchesScreen() {
             >
               {view === "map" ? (
                 <div className="mt-4">
-                  {/* Only the ranked shortlist goes on the map — dropping the
-                      other 141 homes in as context turned the view into a
-                      dataset browser rather than these five in the city. */}
+                  {/* Outside area search only the ranked shortlist goes on the
+                      map — dropping the other 141 homes in as context turned
+                      the view into a dataset browser rather than these five in
+                      the city. Area search deliberately widens that to every
+                      home inside the circle. */}
                   <div className="relative h-[26rem] overflow-hidden rounded-2xl border border-rule sm:h-[30rem]">
                     <PropertyMap
-                      matches={matches}
+                      matches={radiusMode ? rankedInsideRadius : matches}
+                      context={
+                        radiusMode
+                          ? radiusHits
+                              .map((hit) => hit.listing)
+                              .filter((listing) => !rankedIds.has(listing.id))
+                          : []
+                      }
                       activeId={activeId}
                       onSelect={handleActivate}
+                      radiusMode={radiusMode}
+                      radiusCenter={radiusCenter}
+                      radiusKm={radiusKm}
+                      onPickCenter={setRadiusCenter}
+                      onRadiusChange={(km) => setRadiusKm(clampRadiusKm(km))}
                     />
                   </div>
 
-                  <ol className="mt-4 space-y-1.5">
-                    {matches.map((match) => (
-                      <li key={match.id}>
-                        <Link
-                          href={`/listing/${match.id}`}
-                          onMouseEnter={() => setActiveId(match.id)}
-                          onFocus={() => setActiveId(match.id)}
-                          className={cn(
-                            "flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-colors",
-                            activeId === match.id
-                              ? "border-forest/40 bg-paper"
-                              : "border-rule bg-paper/60 hover:border-forest/30",
-                          )}
-                        >
-                          <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-forest text-[0.6875rem] font-semibold text-primary-foreground">
-                            {match.rank}
-                          </span>
-                          <span className="min-w-0 flex-1">
-                            <span className="block truncate text-[0.8125rem] font-medium">
-                              {match.title}
+                  {radiusMode && (
+                    <RadiusPanel
+                      center={radiusCenter}
+                      km={radiusKm}
+                      total={radiusHits.length}
+                      rankedInside={rankedInsideRadius.length}
+                      onKmChange={(km) => setRadiusKm(clampRadiusKm(km))}
+                      onClear={exitRadiusMode}
+                    />
+                  )}
+
+                  {/* Until a point is dropped there is nothing to filter by, so
+                      the ranked list stays put rather than leaving a dead gap
+                      under the map. */}
+                  {radiusMode && radiusCenter ? (
+                    radiusHits.length > 0 ? (
+                        <ol className="thin-scroll mt-4 max-h-[26rem] space-y-1.5 overflow-y-auto pr-1">
+                          {radiusHits.map(({ listing, km }) => {
+                            const ranked = matches.find((match) => match.id === listing.id);
+                            return (
+                              <li key={listing.id}>
+                                <Link
+                                  href={`/listing/${listing.id}`}
+                                  onMouseEnter={() => setActiveId(listing.id)}
+                                  onFocus={() => setActiveId(listing.id)}
+                                  className={cn(
+                                    "flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-colors",
+                                    activeId === listing.id
+                                      ? "border-forest/40 bg-paper"
+                                      : "border-rule bg-paper/60 hover:border-forest/30",
+                                  )}
+                                >
+                                  <span
+                                    className={cn(
+                                      "inline-flex size-6 shrink-0 items-center justify-center rounded-full text-[0.6875rem] font-semibold",
+                                      ranked
+                                        ? "bg-forest text-primary-foreground"
+                                        : "bg-sand text-ink-soft",
+                                    )}
+                                  >
+                                    {ranked ? ranked.rank : "·"}
+                                  </span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="block truncate text-[0.8125rem] font-medium">
+                                      {listing.title}
+                                    </span>
+                                    <span className="block truncate text-[0.75rem] text-ink-soft">
+                                      {listing.sector} · {formatKm(km)} away
+                                    </span>
+                                  </span>
+                                  <span className="flex shrink-0 flex-col items-end gap-1">
+                                    <span className="text-[0.8125rem] font-medium">
+                                      {formatPkrShort(listing.price_pkr)}
+                                    </span>
+                                    <OverBudgetBadge
+                                      price={listing.price_pkr}
+                                      size="compact"
+                                    />
+                                  </span>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ol>
+                    ) : (
+                      <p className="mt-4 rounded-xl border border-dashed border-rule bg-paper/50 py-10 text-center text-[0.8125rem] text-ink-soft">
+                        No homes inside {formatKm(radiusKm)} of that point. Widen the
+                        radius or drop the point somewhere else.
+                      </p>
+                    )
+                  ) : (
+                    <ol className="mt-4 space-y-1.5">
+                      {matches.map((match) => (
+                        <li key={match.id}>
+                          <Link
+                            href={`/listing/${match.id}`}
+                            onMouseEnter={() => setActiveId(match.id)}
+                            onFocus={() => setActiveId(match.id)}
+                            className={cn(
+                              "flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-colors",
+                              activeId === match.id
+                                ? "border-forest/40 bg-paper"
+                                : "border-rule bg-paper/60 hover:border-forest/30",
+                            )}
+                          >
+                            <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-forest text-[0.6875rem] font-semibold text-primary-foreground">
+                              {match.rank}
                             </span>
-                            <span className="block truncate text-[0.75rem] text-ink-soft">
-                              {match.sector}
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-[0.8125rem] font-medium">
+                                {match.title}
+                              </span>
+                              <span className="block truncate text-[0.75rem] text-ink-soft">
+                                {match.sector}
+                              </span>
                             </span>
-                          </span>
-                          <span className="shrink-0 text-right text-[0.8125rem] font-medium">
-                            {formatPkrShort(match.price_pkr)}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ol>
+                            <span className="flex shrink-0 flex-col items-end gap-1">
+                              <span className="text-[0.8125rem] font-medium">
+                                {formatPkrShort(match.price_pkr)}
+                              </span>
+                              <OverBudgetBadge price={match.price_pkr} size="compact" />
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
                 </div>
               ) : (
                 <div className="mt-4 space-y-3">

@@ -24,6 +24,13 @@
   --color-ink: var(--foreground);
   --color-ink-soft: var(--ink-soft);
 
+  /* Muted amber for budget-stretch flags — warm enough to sit on cream
+     without shouting like the rust `destructive`. */
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-warn-line: var(--warn-line);
+  --color-warn-bright: var(--warn-bright);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -78,6 +85,10 @@
   --forest-deep: #102c1e;
   --rule: #e0d7c6;
   --ink-soft: #6c645a;
+  --warn: #8a5a12;
+  --warn-soft: #f7ecd6;
+  --warn-line: #e8d5ab;
+  --warn-bright: #e9cf9a;
 
   --card: #fffdf8;
   --card-foreground: #1c1a17;
@@ -288,6 +299,36 @@
 .listing-pill:hover .listing-pill__rank {
   background: #f7f4ed;
   color: #1b4332;
+}
+
+/* Area search: the centre pin and the edge grip that resizes the circle. */
+.radius-center {
+  width: 14px;
+  height: 14px;
+  cursor: grab;
+  border: 3px solid #fffdf8;
+  border-radius: 50%;
+  background: #1b4332;
+  box-shadow: 0 2px 6px rgb(28 26 23 / 40%);
+}
+
+.radius-handle {
+  width: 16px;
+  height: 16px;
+  cursor: ew-resize;
+  border: 2px solid #1b4332;
+  border-radius: 50%;
+  background: #fffdf8;
+  box-shadow: 0 2px 6px rgb(28 26 23 / 30%);
+  transition: transform 0.15s ease;
+}
+
+.radius-center:active {
+  cursor: grabbing;
+}
+
+.radius-handle:hover {
+  transform: scale(1.2);
 }
 
 /* Thin scrollbars for the ranked panels next to the map. */

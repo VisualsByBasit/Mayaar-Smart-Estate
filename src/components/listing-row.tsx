@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Columns2, X } from "lucide-react";
 
+import OverBudgetBadge from "@/components/over-budget-badge";
 import { type Listing, formatPkr, listingPhoto } from "@/lib/listings";
 import { useSession } from "@/lib/session-store";
 import { cn } from "@/lib/utils";
@@ -68,7 +69,10 @@ export default function ListingRow({
           )}
         </div>
 
-        <p className="mt-2 text-[0.8125rem] font-medium">{formatPkr(listing.price_pkr)}</p>
+        <p className="mt-2 flex flex-wrap items-center gap-2 text-[0.8125rem] font-medium">
+          {formatPkr(listing.price_pkr)}
+          <OverBudgetBadge price={listing.price_pkr} size="compact" />
+        </p>
         <p className="mt-0.5 text-[0.8125rem] text-ink-soft">
           {listing.bedrooms} bed · {listing.bathrooms ?? "—"} bath · {listing.marla} marla
         </p>

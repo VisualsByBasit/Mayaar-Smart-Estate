@@ -47,8 +47,8 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* ------------------------------------------------------------ hero */}
-        <section className="shell relative pt-10 pb-16 md:pt-16 md:pb-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-16">
+        <section className="shell-hero relative pt-10 pb-16 md:pt-16 md:pb-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-20">
             <Reveal>
               <span className="eyebrow">Islamabad · {TOTAL_LISTINGS} listings</span>
 
@@ -69,14 +69,21 @@ export default function LandingPage() {
             </Reveal>
 
             <Reveal delay={120} className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-rule bg-sand">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-rule bg-sand lg:aspect-[5/4] lg:rounded-none lg:border-0">
                 <Image
                   src={HERO_PHOTO}
-                  alt="A white villa in Islamabad with a paved driveway and mature planting"
+                  alt="A warmly lit living room opening onto a dining area"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
+                />
+                {/* Softens the edge where the bled image meets the text
+                    column. Only from lg, where the two columns sit side by
+                    side. */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 left-0 hidden w-2/5 bg-gradient-to-r from-background via-background/45 to-transparent lg:block"
                 />
               </div>
 
@@ -183,7 +190,7 @@ export default function LandingPage() {
                 they&apos;re those five — and what each one costs you.
               </p>
 
-              <dl className="mt-9 space-y-7">
+              <dl className="mt-9 max-w-[40rem] space-y-7">
                 {REASONING_POINTS.map((point) => (
                   <div key={point.title} className="border-t border-rule pt-5">
                     <dt className="font-heading text-[1.0625rem] font-medium">
@@ -207,7 +214,7 @@ export default function LandingPage() {
                 <span className="text-[0.6875rem] font-semibold tracking-[0.16em] text-primary-foreground/60 uppercase">
                   For agents
                 </span>
-                <h2 className="font-heading mt-4 text-[1.875rem] leading-tight font-medium text-balance sm:text-[2.25rem]">
+                <h2 className="font-heading mt-4 max-w-[36rem] text-[1.875rem] leading-tight font-medium text-balance sm:text-[2.25rem]">
                   Spend your time on buyers who already know what they want.
                 </h2>
                 <p className="mt-5 max-w-lg text-[0.9375rem] leading-relaxed text-primary-foreground/75">

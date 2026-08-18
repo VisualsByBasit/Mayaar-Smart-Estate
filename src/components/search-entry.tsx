@@ -7,7 +7,7 @@ import { useSession } from "@/lib/session-store";
 
 export const EXAMPLE_QUERIES = [
   "Family of five, 6–9 crore, somewhere in DHA with a lawn for the kids",
-  "4 bed in F-11 or E-11, walkable to schools, under 8 crore",
+  "4 bed in F-7 or F-11, walkable to schools, under 8 crore",
   "Corner plot, modern build, lots of natural light",
   "My parents live with us — ground-floor bedroom, quiet street",
 ];

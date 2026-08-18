@@ -113,7 +113,10 @@ export default function CompareScreen() {
       </Reveal>
 
       <Reveal delay={80} className="mt-10">
-        <div className="overflow-x-auto pb-2">
+        {/* The table needs 42rem to stay readable, so below md it is replaced
+            by the stacked sections further down rather than sending a phone
+            sideways. From md the layout is unchanged. */}
+        <div className="hidden overflow-x-auto pb-2 md:block">
           <div className="min-w-[42rem]">
             {/* ------------------------------------------------ home headers */}
             <div className="grid gap-px" style={{ gridTemplateColumns: columns }}>
@@ -299,6 +302,166 @@ export default function CompareScreen() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Below md: each home gets its own full-width section — photo,
+            title, facts and scored criteria in sequence — then the next. */}
+        <div className="md:hidden">
+          {listings.map((listing, index) => {
+            const photo = listingPhoto(listing, 600);
+            const isSaved = saved.includes(listing.id);
+            return (
+              <section
+                key={listing.id}
+                className="mt-10 border-t border-rule pt-8 first:mt-0 first:border-t-0 first:pt-0"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-sand">
+                  <Image
+                    src={photo.src}
+                    alt={listing.title}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                  {index === bestOverall && (
+                    <span className="absolute top-2 left-2 inline-flex items-center gap-1 rounded-full bg-forest px-2.5 py-1 text-[0.625rem] font-semibold tracking-wide text-primary-foreground uppercase">
+                      <Trophy className="size-2.5" />
+                      Best fit
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => toggleCompare(listing.id)}
+                    aria-label={`Remove ${listing.title} from compare`}
+                    className="absolute top-2 right-2 inline-flex size-7 items-center justify-center rounded-full bg-paper/90 text-ink-soft backdrop-blur transition-colors hover:text-destructive"
+                  >
+                    <X className="size-3.5" />
+                  </button>
+                </div>
+
+                <h2 className="mt-3 font-heading text-[1.0625rem] leading-snug font-medium">
+                  <Link href={`/listing/${listing.id}`} className="hover:text-forest">
+                    {listing.title}
+                  </Link>
+                </h2>
+                <p className="mt-1 text-[0.8125rem] text-ink-soft">{listing.society}</p>
+
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span
+                    className={cn(
+                      "font-heading text-[1.375rem] leading-none font-medium",
+                      index === bestOverall ? "text-forest" : "text-ink-soft",
+                    )}
+                  >
+                    {overall[index]}%
+                  </span>
+                  <span className="text-[0.75rem] text-ink-soft">overall match</span>
+                  {index === bestOverall && (
+                    <span className="text-[0.6875rem] font-semibold tracking-wide text-forest uppercase">
+                      Best
+                    </span>
+                  )}
+                </div>
+                <ScoreBar score={overall[index]} size="compact" delay={index * 80} />
+
+                <div className="mt-3 flex flex-wrap gap-1">
+                  <button
+                    type="button"
+                    onClick={() => toggleSaved(listing.id)}
+                    className={cn(
+                      "rounded-md px-2 py-1 text-[0.6875rem] font-medium transition-colors",
+                      isSaved ? "bg-forest/10 text-forest" : "text-ink-soft hover:text-forest",
+                    )}
+                  >
+                    {isSaved ? "Saved" : "Save"}
+                  </button>
+                  <Link
+                    href={`/breakdown/${listing.id}`}
+                    className="rounded-md px-2 py-1 text-[0.6875rem] font-medium text-forest hover:underline"
+                  >
+                    Breakdown
+                  </Link>
+                </div>
+
+                <SectionLabel>The facts</SectionLabel>
+                <dl>
+                  {FACT_ROWS.map((row, rowIndex) => (
+                    <div
+                      key={row.label}
+                      className={cn(
+                        "flex items-baseline justify-between gap-4 border-t border-rule py-2.5",
+                        rowIndex === 0 && "border-t-0",
+                      )}
+                    >
+                      <dt className="text-[0.8125rem] text-ink-soft">{row.label}</dt>
+                      <dd className="flex flex-wrap items-center justify-end gap-1.5 text-[0.8125rem] font-medium">
+                        {row.value(listing)}
+                        {row.badge?.(listing)}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                {rows.length > 0 && (
+                  <>
+                    <SectionLabel>Scored against your brief</SectionLabel>
+                    {rows.map((row, rowIndex) => {
+                      const cell = row.cells[index];
+                      return (
+                        <div
+                          key={row.key}
+                          className={cn(
+                            "border-t border-rule py-3",
+                            rowIndex === 0 && "border-t-0",
+                          )}
+                        >
+                          <div className="flex items-center justify-between gap-3">
+                            <span className="text-[0.8125rem] text-ink-soft">
+                              {row.label}
+                              {row.allTied && (
+                                <span className="text-[0.6875rem] text-ink-soft/70"> · All equal</span>
+                              )}
+                            </span>
+                            {cell && (
+                              <span className="flex items-center gap-1.5">
+                                <span className="font-mono text-xs text-ink-soft">{cell.score}</span>
+                                {row.bestIndexes.includes(index) && (
+                                  <Check
+                                    className={cn("size-3", row.allTied ? "text-sage" : "text-forest")}
+                                    aria-label={row.allTied ? "Equal best" : "Best here"}
+                                  />
+                                )}
+                              </span>
+                            )}
+                          </div>
+                          {cell ? (
+                            <>
+                              <ScoreBar score={cell.score} size="compact" delay={rowIndex * 60} />
+                              <p className="mt-1.5 text-[0.75rem] leading-snug text-ink-soft">
+                                {cell.note}
+                              </p>
+                            </>
+                          ) : (
+                            <span className="text-[0.75rem] text-ink-soft">Not scored</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
+              </section>
+            );
+          })}
+
+          {rows.length === 0 && (
+            <p className="mt-6 border-t border-rule pt-6 text-[0.8125rem] text-ink-soft">
+              Describe what you&apos;re looking for and each criterion gets scored here too.{" "}
+              <Link href="/describe" className="font-medium text-forest hover:underline">
+                Start a search
+              </Link>
+              .
+            </p>
+          )}
         </div>
       </Reveal>
 

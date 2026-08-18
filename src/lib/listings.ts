@@ -112,7 +112,7 @@ export function listingGallery(listing: Listing, count = 3): string[] {
   );
 }
 
-export const HERO_PHOTO = pexels("7031407", 1400);
+export const HERO_PHOTO = pexels("7851906", 1600);
 export const EDITORIAL_PHOTO = pexels("5982764", 1200);
 export const REASONING_PHOTO = pexels("7031595", 1000);
 

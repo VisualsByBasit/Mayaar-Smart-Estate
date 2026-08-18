@@ -90,6 +90,15 @@ export default function DescribeComposer() {
               </div>
             </div>
           </form>
+
+          {/* Extraction resolves a named place to real coordinates and the
+              distance maths runs from there, so a recognisable landmark buys a
+              far better shortlist than an office name nobody outside it knows. */}
+          <p className="mt-3 px-1 text-[0.8125rem] leading-snug text-ink-soft">
+            Mentioning your office by name? Also name a nearby well-known place
+            — a mosque, mall, or major road — so we can pinpoint the area
+            accurately.
+          </p>
         </Reveal>
 
         <Reveal delay={150} className="mt-12 grid gap-10 sm:grid-cols-2">
